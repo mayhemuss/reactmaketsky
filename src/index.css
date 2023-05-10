@@ -1,13 +1,63 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Helios';
+  src: url('./fonts/heliosBold.eot') format('embedded-opentype'),
+      url('./fonts/heliosBold1.woff') format('woff'),
+      url('./fonts/heliosBold2.woff2') format('woff2');
+}
+.App{
+  display: flex;
+  flex-direction: row;
+  width: 700mm;
+}
+.tableBody {
+  display: flex;
+
+  gap: 2.5mm;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: stretch;
+  height: 100%;
+  width: 100%;
+}
+.line {
+  gap: 2.5mm;
+  /* height: 100%; */
+  align-content: stretch;
+  display: flex;
+  flex-direction: row;
+}
+.full__table {
+  font-family: "Helios";
+  width: 200mm;
+  height: 400mm;
+  display: flex;
+  flex-direction: column;
+  border: 1px dotted black;
+}
+.navigation{
+  display: flex;
+  flex-direction: column;
+  width: 70mm;
+  margin-left: 20mm;
+  gap: 3mm;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.logo {
+  margin-left: 15mm;
+  margin-right: 15mm;
+  margin-bottom: 18mm;
+  margin-top: 15mm;
+  display: flex;
+  flex-direction: row;
+  height: 25mm;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.sky_logo {
+  height: 25mm;
+}
+
+.sky_text {
+  height: 20mm;
 }
