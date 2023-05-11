@@ -3,30 +3,24 @@ import MyInput from "./MyInput";
 import MyButton from "./MyButton";
 
 function Navigation({
-  changeInput,
-  setСurrentLadder,
-  ladderCount,
-  setReverseTable,
-  setTableHead,
-  setAddAdress,
-  setHeadType,
-  setAddLadderNum,
+  setIsReverseTable, changeInput, ladderCount, setСurrentLadder, setHaveTableHead, setHaveAddAdress, setHeadType, setHaveLadderNum
+  
 }) {
   const [state, setState] = useState(ladderCount);
 
   const revesTableHandler = () => {
-    setReverseTable((prev) => !prev);
+    setIsReverseTable((prev) => !prev);
   };
 
-  const tableHeadHandler = () => {
-    setTableHead((prev) => !prev);
+  const haveTableHeadHandler = () => {
+    setHaveTableHead((prev) => !prev);
   };
 
-  const addAdressHandler = () => {
-    setAddAdress((prev) => !prev);
+  const haveAddAdressHandler = () => {
+    setHaveAddAdress((prev) => !prev);
   };
-  const addLadderNumHandler = () => {
-    setAddLadderNum((prev) => !prev);
+  const HaveLadderNumHandler = () => {
+    setHaveLadderNum((prev) => !prev);
   };
   const headTypeHandler = (e) => {
     setHeadType(e.target.value);
@@ -38,9 +32,9 @@ function Navigation({
   return (
     <div className="navigation">
       <MyInput changeInput={changeInput} />
-      <button onClick={addAdressHandler}>Нужен адресс?</button>
-      <button onClick={addLadderNumHandler}>Нужна парадная?</button>
-      <button onClick={tableHeadHandler}>Нужен заголовок этаж квартира?</button>
+      <button onClick={haveAddAdressHandler}>Нужен адресс?</button>
+      <button onClick={HaveLadderNumHandler}>Нужна парадная?</button>
+      <button onClick={haveTableHeadHandler}>Нужен заголовок этаж квартира?</button>
       <button onClick={revesTableHandler}>Перевернуть таблицу</button>
       <button onClick={headTypeHandler} value={"Парадная"}>
         Парадная

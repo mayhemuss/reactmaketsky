@@ -1,9 +1,9 @@
 import React from "react";
 
-function Line({ obj, tableHaed }) {
+function Line({ thisFloor, haveTableHead }) {
   return (
     <>
-      {tableHaed ? (
+      {haveTableHead ? (
         <div className="top line">
           <div>этаж</div>
           <div>квартиры</div>
@@ -12,18 +12,18 @@ function Line({ obj, tableHaed }) {
         <></>
       )}
 
-      {obj === undefined ? (
+      {thisFloor === undefined ? (
         <></>
       ) : (
         <div className="line">
-          <div className="collumn1">{obj.floor}</div>
+          <div className="collumn1">{thisFloor.floor}</div>
           <div className="collumn2">
-            {isNaN(+obj.roomEnd) ? (
-              <>{obj.roomStart + " – " + obj.roomEnd}</>
+            {isNaN(+thisFloor.roomEnd) ? (
+              <>{thisFloor.roomStart + " – " + thisFloor.roomEnd}</>
             ) : (
               <>
-                <div>{obj.roomStart}</div>
-                <div>{obj.roomEnd}</div>
+                <div>{thisFloor.roomStart}</div>
+                <div>{thisFloor.roomEnd}</div>
               </>
             )}
           </div>

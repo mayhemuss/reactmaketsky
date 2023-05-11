@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FullTable from "./Components/Table/FullTable";
 import Navigation from "./Components/Navigation/Navigation";
 import Instruction from "./Components/Instruction/Instruction";
+import sampleLadder from "./sampleLadder";
 
 function App() {
   const changeInput = (event) => {
@@ -15,42 +16,16 @@ function App() {
     }
   };
 
-  const sampleLadder = {
-    Adress: "Какойто адресс",
-    ladders: [
-      {
-        ladderNum: 1,
-        arr: [
-          { floor: 1, roomStart: "кв", roomEnd: "кв" },
-          { floor: 2, roomStart: "кв", roomEnd: "кв" },
-          { floor: 3, roomStart: "кв", roomEnd: "кв" },
-          { floor: 4, roomStart: "кв", roomEnd: "кв" },
-          { floor: 5, roomStart: "кв", roomEnd: "кв" },
-          { floor: 6, roomStart: "кв", roomEnd: "кв" },
-          { floor: 7, roomStart: "кв", roomEnd: "кв" },
-          { floor: 8, roomStart: "кв", roomEnd: "кв" },
-          { floor: 9, roomStart: "кв", roomEnd: "кв" },
-          { floor: 10, roomStart: "кв", roomEnd: "кв" },
-        ],
-      },
-    ],
-  };
-
-  const standartSettings = {};
-
   const [inputData, setInputData] = useState(sampleLadder);
   const [ladderCount, setLadderCount] = useState([]);
-
-  const [settings, setSettings] = useState();
-
   const [currentLadder, setСurrentLadder] = useState(1);
-  const [reverseTable, setReverseTable] = useState(false);
-  const [addLadderNum, setAddLadderNum] = useState(true);
-  const [tableHead, setTableHead] = useState(true);
-  const [addAdress, setAddAdress] = useState(true);
-  const [headType, setHeadType] = useState("Парадная");
+  const [isReverseTable, setIsReverseTable] = useState(false);
+  const [haveLadderNum, setHaveLadderNum] = useState(true);
+  const [haveTableHead, setHaveTableHead] = useState(true);  //этаж квартира?
+  const [haveAddAdress, setHaveAddAdress] = useState(true);  //указывать адресс?
+  const [headType, setHeadType] = useState("Парадная");  //тип подписи в заголовке
 
-  useEffect(() => {
+  useEffect(() => {    //при изменении инпута получаем массив с номерами парадных
     const arr = [];
     inputData.ladders.forEach((elem) => {
       arr.push(elem.ladderNum);
@@ -63,21 +38,21 @@ function App() {
       <FullTable
         inputData={inputData}
         currentLadder={currentLadder}
-        reverseTable={reverseTable}
-        tableHead={tableHead}
-        addAdress={addAdress}
+        isReverseTable={isReverseTable}
+        haveTableHead={haveTableHead}
+        haveAddAdress={haveAddAdress}
         headType={headType}
-        addLadderNum={addLadderNum}
+        haveLadderNum={haveLadderNum}
       />
       <Navigation
-        setReverseTable={setReverseTable}
+        setIsReverseTable={setIsReverseTable}
         changeInput={changeInput}
         ladderCount={ladderCount}
         setСurrentLadder={setСurrentLadder}
-        setTableHead={setTableHead}
-        setAddAdress={setAddAdress}
+        setHaveTableHead={setHaveTableHead}
+        setHaveAddAdress={setHaveAddAdress}
         setHeadType={setHeadType}
-        setAddLadderNum={setAddLadderNum}
+        setHaveLadderNum={setHaveLadderNum}
       />
       <Instruction />
     </div>
