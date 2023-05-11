@@ -1,12 +1,12 @@
 import React from "react";
 import Line from "./Line";
 
-function Table({ ladder, reverseTable }) {
+function Table({ ladder, isReverseTable }) {
   const allFloor = ladder.arr;
 
   return (
     <div className="tableBody">
-      {reverseTable
+      {isReverseTable
         ? Array.from(allFloor)
             .reverse()
             .map((elem) => <Line key={elem.floor} thisFloor={elem} />)
