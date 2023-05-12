@@ -6,18 +6,20 @@ import AddLogo from "./AddLogo";
 import Line from "./Line";
 
 function FullTable({
-  inputData, currentLadder, isReverseTable, haveTableHead, haveAddAdress, headType, haveLadderNum
+  inputData,
+  currentLadder,
+  isReverseTable,
+  haveTableHead,
+  haveAddAdress,
+  headType,
+  haveLadderNum,
 }) {
   const ladder = inputData.ladders[currentLadder - 1];
 
   return (
     <div className="full__table">
-      {haveAddAdress ? <Adress adress={inputData.Adress} />:<></>}
-      {haveLadderNum ? (
-        <LadderNum ladderN={ladder} headType={headType} />
-      ) : (
-        <></>
-      )}
+      {haveAddAdress && <Adress adress={inputData.Adress} />}
+      {haveLadderNum && <LadderNum ladderN={ladder} headType={headType} />}
       <Line haveTableHead={haveTableHead} />
       <Table ladder={ladder} isReverseTable={isReverseTable} />
       <AddLogo />

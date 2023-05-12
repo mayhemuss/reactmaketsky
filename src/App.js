@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import FullTable from "./Components/Table/FullTable";
 import Navigation from "./Components/Navigation/Navigation";
 import Instruction from "./Components/Instruction/Instruction";
 import sampleLadder from "./sampleLadder";
+import { useToggle } from "./useToggle";
 
 function App() {
-  const changeInput = (event) => {
-    const inputValue = event.target.value;
-    const value = inputValue.substring(0, inputValue.length - 2);
+  const changeInput = ({ target: { value } }) => {
+    const val = value.substring(0, value.length - 2);
     try {
-      setInputData(JSON.parse(value + "]}"));
+      setInputData(JSON.parse(val + "]}"));
     } catch (error) {
       alert("Формат файла не правильный");
       alert(error);
@@ -17,21 +17,16 @@ function App() {
   };
 
   const [inputData, setInputData] = useState(sampleLadder);
-  const [ladderCount, setLadderCount] = useState([]);
-  const [currentLadder, setСurrentLadder] = useState(1);
-  const [isReverseTable, setIsReverseTable] = useState(false);
-  const [haveLadderNum, setHaveLadderNum] = useState(true);
-  const [haveTableHead, setHaveTableHead] = useState(true);  //этаж квартира?
-  const [haveAddAdress, setHaveAddAdress] = useState(true);  //указывать адресс?
-  const [headType, setHeadType] = useState("Парадная");  //тип подписи в заголовке
 
-  useEffect(() => {    //при изменении инпута получаем массив с номерами парадных
-    const arr = [];
-    inputData.ladders.forEach((elem) => {
-      arr.push(elem.ladderNum);
-      setLadderCount(arr);
-    });
-  }, [inputData]);
+  const [currentLadder, setСurrentLadder] = useState(1);
+  const [isReverseTable, toggleIsReverseTable] = useToggle(false);
+  const [haveLadderNum, toggleHaveLadderNum] = useToggle(true);
+  const [haveTableHead, toggleHaveTableHead] = useToggle(true); //этаж квартира?
+  const [haveAddAdress, toggleHaveAddAdress] = useToggle(true); //указывать адресс?
+  const [headType, setHeadType] = useState("Парадная"); //тип подписи в заголовке
+
+  //при изменении инпута получаем массив с номерами парадных
+  const ladderCount = inputData.ladders.map((elem) => elem.ladderNum);
 
   return (
     <div className="App">
@@ -45,14 +40,14 @@ function App() {
         haveLadderNum={haveLadderNum}
       />
       <Navigation
-        setIsReverseTable={setIsReverseTable}
+        setIsReverseTable={toggleIsReverseTable}
         changeInput={changeInput}
         ladderCount={ladderCount}
         setСurrentLadder={setСurrentLadder}
-        setHaveTableHead={setHaveTableHead}
-        setHaveAddAdress={setHaveAddAdress}
+        setHaveTableHead={toggleHaveTableHead}
+        setHaveAddAdress={toggleHaveAddAdress}
         setHeadType={setHeadType}
-        setHaveLadderNum={setHaveLadderNum}
+        setHaveLadderNum={toggleHaveLadderNum}
       />
       <Instruction />
     </div>

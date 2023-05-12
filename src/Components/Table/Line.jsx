@@ -3,17 +3,15 @@ import React from "react";
 function Line({ thisFloor, haveTableHead }) {
   return (
     <>
-      {haveTableHead ? (
+      {haveTableHead && (
         <div className="top line">
           <div>этаж</div>
           <div>квартиры</div>
         </div>
-      ) : (
-        <></>
       )}
 
       {thisFloor === undefined ? (
-        <></>
+        null
       ) : (
         <div className="line">
           <div className="collumn1">{thisFloor.floor}</div>
