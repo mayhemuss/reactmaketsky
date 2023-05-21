@@ -1,12 +1,21 @@
 import React from "react";
 import Line from "./Line";
+import { useSelector } from "react-redux";
 
-function Table({ ladder, reverseTable }) {
-  const reversedArr = reverseTable ? [...ladder.arr].reverse() : ladder.arr;
+function Table() {
+
+  const entrance = useSelector((state)=> state.entrances.entrance)
+  const currentEntarance = useSelector((state)=> state.settings.currentEntarance)
+  const isReverseTable = useSelector((state)=> state.settings.isReverseTable)
+  const current = entrance[currentEntarance];
+
+  const ladder = isReverseTable ? [...current].reverse() : current;
 
   return (
-    <div className="tableBody">
-      { reversedArr.map((elem) => <Line key={elem.floor} thisFloor={elem} />)}
+    <div >
+      {ladder.map((elem) => (
+        <Line key={elem.floor} thisFloor={elem} />
+      ))}
     </div>
   );
 }

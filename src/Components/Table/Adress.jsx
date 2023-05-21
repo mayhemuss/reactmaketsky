@@ -2,7 +2,7 @@ import React from 'react';
 
 function Adress({adress}) {
     return (
-        <div>
+        <div className='base adress'>
             {adress}
         </div>
     );

@@ -1,30 +1,71 @@
 @font-face {
-  font-family: 'Helios';
-  src: url('./fonts/heliosBold.eot') format('embedded-opentype'),
-      url('./fonts/heliosBold1.woff') format('woff'),
-      url('./fonts/heliosBold2.woff2') format('woff2');
+  font-family: "Helios";
+  src: url("./fonts/heliosBold.eot") format("embedded-opentype"),
+    url("./fonts/heliosBold1.woff") format("woff"),
+    url("./fonts/heliosBold2.woff2") format("woff2");
 }
-.App{
+.App {
   display: flex;
   flex-direction: row;
   width: 700mm;
 }
-.tableBody {
-  display: flex;
 
+.full{
+  height: 100%;
+}
+.fff{
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  gap: 4mm;
+}
+.base {
+  display: flex;
+  /* height: 100%; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.full__table {
+  display: flex;
   gap: 2.5mm;
   flex-direction: column;
   justify-content: space-between;
   align-content: stretch;
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
+  text-transform: uppercase;
+  font-size: 90px;
 }
+.adress {
+  border: 1px solid red;
+  justify-content: center;
+}
+.ladder_num {
+  border: 1px solid red;
+}
+
 .line {
   gap: 2.5mm;
-  /* height: 100%; */
+
   align-content: stretch;
   display: flex;
   flex-direction: row;
+  width: 100%;
+
+  justify-content: space-between;
+}
+
+.collumn1 {
+  width: 30%;
+}
+.collumn2 {
+  width: 70%;
+}
+
+.collumn {
+  border: 1px solid red;
 }
 .full__table {
   font-family: "Helios";
@@ -33,8 +74,9 @@
   display: flex;
   flex-direction: column;
   border: 1px dotted black;
+  padding: 15mm;
 }
-.navigation{
+.settings {
   display: flex;
   flex-direction: column;
   width: 70mm;
@@ -43,9 +85,6 @@
 }
 
 .logo {
-  margin-left: 15mm;
-  margin-right: 15mm;
-  margin-bottom: 18mm;
   margin-top: 15mm;
   display: flex;
   flex-direction: row;
@@ -60,4 +99,27 @@
 
 .sky_text {
   height: 20mm;
+}
+
+.left {
+  display: flex;
+  width: 40%;
+  justify-content: flex-end;
+  white-space: inherit;
+  margin-left: 5mm;
+}
+
+.center {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  white-space: inherit;
+}
+
+.right {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  white-space: inherit;
+  margin-right: 5mm;
 }
