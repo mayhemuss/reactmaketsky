@@ -10,45 +10,45 @@
   width: 700mm;
 }
 
-.full{
+.full {
   height: 100%;
+  justify-content: space-between;
 }
-.fff{
+.fff {
   /* height: 100%; */
   display: flex;
   flex-direction: column;
   gap: 4mm;
 }
 .base {
-  display: flex;
-  /* height: 100%; */
   justify-content: center;
   align-items: center;
   text-align: center;
+  padding: 2pt;
+  display: flex;
+}
+.base_blue_white {
+  background-color: rgb(49, 39, 131);
+  color: rgb(255, 255, 255);
 }
 
-.full__table {
-  display: flex;
-  gap: 2.5mm;
-  flex-direction: column;
-  justify-content: space-between;
-  align-content: stretch;
-  /* height: 100%; */
-  width: 100%;
-  text-transform: uppercase;
-  font-size: 90px;
-}
 .adress {
-  border: 1px solid red;
   justify-content: center;
+  padding: 0.5rem;
 }
 .ladder_num {
-  border: 1px solid red;
+  padding: 0.5rem;
+}
+.big_ladderN {
+  font-size: 80px;
+}
+.small_ladderN {
+  font-size: 50px;
 }
 
 .line {
   gap: 2.5mm;
-
+  height: 100%;
   align-content: stretch;
   display: flex;
   flex-direction: row;
@@ -65,27 +65,51 @@
 }
 
 .collumn {
-  border: 1px solid red;
+  /* border: 1px solid red; */
+  height: 100%;
 }
 .full__table {
+  display: flex;
+  gap: 2.8mm;
+  flex-direction: column;
+  align-content: stretch;
+  width: 100%;
+  text-transform: uppercase;
   font-family: "Helios";
-  width: 200mm;
-  height: 400mm;
   display: flex;
   flex-direction: column;
   border: 1px dotted black;
-  padding: 15mm;
+}
+
+.small_table {
+  padding-top: 10mm;
+  padding-left: 10mm;
+  padding-right: 10mm;
+}
+.medium_table {
+  padding-top: 15mm;
+  padding-left: 15mm;
+  padding-right: 15mm;
+}
+.big_table {
+  padding-top: 15mm;
+  padding-left: 15mm;
+  padding-right: 15mm;
 }
 .settings {
   display: flex;
   flex-direction: column;
-  width: 70mm;
+  width: 80mm;
   margin-left: 20mm;
   gap: 3mm;
+  font-size: 20px;
 }
 
-.logo {
-  margin-top: 15mm;
+.top {
+  font-size: 34pt;
+}
+
+.standart_logo {
   display: flex;
   flex-direction: row;
   height: 25mm;
@@ -93,12 +117,28 @@
   justify-content: space-between;
 }
 
-.sky_logo {
+.small_logo {
+  height: 19mm;
+  padding-top: 7mm;
+  padding-bottom: 12mm;
+}
+.medium_logo {
   height: 25mm;
+  padding-top: 10mm;
+  padding-bottom: 15mm;
+}
+.big_logo {
+  height: 30mm;
+  padding-top: 10mm;
+  padding-bottom: 15mm;
 }
 
-.sky_text {
-  height: 20mm;
+.logo_img {
+  height: 100%;
+}
+
+.logo_text {
+  height: 90%;
 }
 
 .left {

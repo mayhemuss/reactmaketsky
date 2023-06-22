@@ -7,16 +7,20 @@ const settingSlice = createSlice({
     haveAdress: true,
     haveLadderNum: true,
     haveTableTop: true,
-    fulltableSize: false,
     isReverseTable: false,
-    currentEntarance: 1,
+    currentEntarance: "1",
     headType: "Парадная №",
-    idealFontSize: 90,
-    fontSize: 90,
+    fontSize: 110,
   },
   reducers: {
-    setAdressSize(state, {payload}) {
+    setAdressSize(state, { payload }) {
       state.adressSize = payload;
+    },
+    AdressSizeDecriment(state) {
+      state.adressSize = state.adressSize + 1;
+    },
+    AdressSizeIncriment(state) {
+      state.adressSize = state.adressSize - 1;
     },
     setHaveAdress(state) {
       state.haveAdress = !state.haveAdress;
@@ -27,23 +31,20 @@ const settingSlice = createSlice({
     setHaveTableTop(state) {
       state.haveTableTop = !state.haveTableTop;
     },
-    setFulltableSize(state) {
-      state.fulltableSize = !state.fulltableSize;
-    },
     setIsReverseTable(state) {
       state.isReverseTable = !state.isReverseTable;
     },
     setCurrentEntarance(state, action) {
       state.currentEntarance = action.payload;
     },
-    setHeadType(state, {payload}) {
+    setHeadType(state, { payload }) {
       state.headType = payload;
     },
-    setIdealFontSize(state, action) {
-      state.idealFontSize = action.payload;
+    setFontSize(state, { payload }) {
+      state.fontSize = payload;
     },
-    setFontSize(state, action) {
-      state.fontSize = action.payload;
+    changeFontSize(state, { payload }) {
+      state.fontSize = state.fontSize + payload;
     },
   },
 });
@@ -54,11 +55,13 @@ export const {
   setAdressSize,
   setHaveAdress,
   setHaveLadderNum,
-  setFulltableSize,
+  AdressSizeIncriment,
+  AdressSizeDecriment,
   setIsReverseTable,
   setCurrentEntarance,
   setHeadType,
-  setIdealFontSize,
-  setFontSize,
   setHaveTableTop,
+  setIdealSize,
+  setFontSize,
+  changeFontSize,
 } = settingSlice.actions;

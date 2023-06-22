@@ -7,7 +7,7 @@ function MyRadio({ val, callBack, children, current }) {
         type="radio"
         value={val}
         onChange={callBack}
-        checked={val == current ? true : false}
+        checked={val === current ? true : false}
       />
       {children}
     </div>

@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setHaveAdress, setHaveLadderNum, setHaveTableTop, setHeadType, setIsReverseTable } from "../../store/reducers/settingSlice";
+import {
+  setHaveAdress,
+  setHaveLadderNum,
+  setHaveTableTop,
+  setHeadType,
+  setIsReverseTable,
+  setFontSize,
+} from "../../store/reducers/settingSlice";
 import MyCheckBox from "../MyCheckBox";
 import MyRadio from "../Table/MyRadio";
+
+import { settingsSelector } from "../../store/selectors";
 
 function TableHeadSettings() {
   const dispatch = useDispatch();
   const { haveAdress, haveLadderNum, haveTableTop, isReverseTable, headType } =
-    useSelector((state) => state.settings);
+    useSelector(settingsSelector);
 
   const [typesEnt, setTypesEnt] = useState([
     "Парадная №",
@@ -22,18 +31,21 @@ function TableHeadSettings() {
   const headTypeHandler = (e) => {
     dispatch(setHeadType(e.target.value));
   };
-const haveAdressToggle = () => {
-  dispatch(setHaveAdress());
-};
-const setHaveLadderNumToggle = () => {
-  dispatch(setHaveLadderNum());
-};
-const setHaveTableTopToggle = () => {
-  dispatch(setHaveTableTop());
-};
-const setIsReverseTableToggle = () => {
-  dispatch(setIsReverseTable());
-};
+  const haveAdressToggle = () => {
+    dispatch(setHaveAdress());
+    dispatch(setFontSize(110));
+  };
+  const setHaveLadderNumToggle = () => {
+    dispatch(setHaveLadderNum());
+    dispatch(setFontSize(110));
+  };
+  const setHaveTableTopToggle = () => {
+    dispatch(setHaveTableTop());
+    dispatch(setFontSize(110));
+  };
+  const setIsReverseTableToggle = () => {
+    dispatch(setIsReverseTable());
+  };
 
   return (
     <>
@@ -52,14 +64,20 @@ const setIsReverseTableToggle = () => {
       </MyCheckBox>
       <div>..............</div>
       Выбери тип названия парадной:
-      <button onClick={typesHandler}>добавить свое</button>
+      
       {typesEnt.map((elem) => {
         return (
-          <MyRadio callBack={headTypeHandler} current={headType} val={elem}>
+          <MyRadio
+            key={elem}
+            callBack={headTypeHandler}
+            current={headType}
+            val={elem}
+          >
             {elem}
           </MyRadio>
         );
       })}
+      <button onClick={typesHandler}>добавить свое</button>
       <div>...................</div>
     </>
   );

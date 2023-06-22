@@ -1,17 +1,23 @@
-import React from 'react';
-import MyRadio from '../Table/MyRadio';
-import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentEntarance } from '../../store/reducers/settingSlice';
+import React from "react";
+import MyRadio from "../Table/MyRadio";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setCurrentEntarance,
+  setFontSize,
+  
+} from "../../store/reducers/settingSlice";
+
+import { entrancesSelector, settingsSelector } from "../../store/selectors";
 
 function ChoseEntarance() {
   const dispatch = useDispatch();
   const currentEntaranceHandler = (e) => {
     dispatch(setCurrentEntarance(e.target.value));
+    dispatch(setFontSize(110));
+    
   };
-  const currentEntarance = useSelector(
-    (state) => state.settings.currentEntarance
-  );
-  const allEntrances = useSelector((state) => state.entrances.allEntrances);
+  const { currentEntarance } = useSelector(settingsSelector);
+  const {allEntrances} = useSelector(entrancesSelector);
 
   return (
     <>

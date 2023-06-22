@@ -4,60 +4,67 @@ import LadderNum from "./LadderNum";
 import Table from "./Table";
 import AddLogo from "./AddLogo";
 import Line from "./Line";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { changeFontSize } from "../../store/reducers/settingSlice";
+import {
+  settingsSelector,
+  entrancesSelector,
+  tableSelector,
+} from "../../store/selectors";
+import { tableSizeCorrector } from "../../function/tableSizeCorrector";
+import { paddingCorrector } from "../../function/paddingCorrector";
 
+function FullTable() {
+  const dispatch = useDispatch();
 
-function FullTable({
-  
-}) {
+  const {
+    haveAdress,
+    currentEntarance,
+    headType,
+    haveTableTop,
+    haveLadderNum,
+    adressSize,
+    fontSize,
+  } = useSelector(settingsSelector);
+  const { adress, entrance } = useSelector(entrancesSelector);
+  const { allTableSize, currentTableSize } = useSelector(tableSelector);
 
+  const refComponent = createRef();
+  const refComponent2 = createRef();
 
+  const height = allTableSize[currentTableSize].height;
+  const width = allTableSize[currentTableSize].width;
 
-  // const refComponent = createRef();
-  // useEffect(() => {
-  //   const height = refComponent.current.getBoundingClientRect().height;
-  //   console.log(height)
-  //   if(fullSize){setIdealSize(height)}
-  //   else{}
-  // }, [refComponent]);
+  useEffect(() => {
+    const logoref = refComponent.current;
+    const currentHigth = logoref.offsetTop + logoref.clientHeight; //высота контейнера
 
-  const haveAdress = useSelector(
-    (state) => state.settings.haveAdress
-  );
-  const currentEntarance = useSelector(
-    (state) => state.settings.currentEntarance
-  );
-  const headType = useSelector(
-    (state) => state.settings.headType
-  );
-  const haveTableTop = useSelector(
-    (state) => state.settings.haveTableTop
-  );
-  const haveLadderNum = useSelector(
-    (state) => state.settings.haveLadderNum
-  );
-  const adress = useSelector(
-    (state) => state.entrances.adress
-  );
+    const fullRef = refComponent2.current;
+    const fullHigth =
+      fullRef.offsetTop + fullRef.getBoundingClientRect().height; //высота
+    dispatch(
+      changeFontSize(tableSizeCorrector(fullHigth, currentHigth, fontSize))
+    );
+  }, [fontSize, currentEntarance, currentTableSize, entrance, adressSize]);
 
   return (
-    <div className="full__table" >
-      <div
-        
-        
-      >
-        {haveAdress && <Adress adress={adress} />}
-        {haveLadderNum && (
-          <LadderNum ladderN={currentEntarance} headType={headType} />
-        )}
-        <Line haveTableHead={haveTableTop} />
-
-        <Table
-        
-          // re={refComponent}
+    <div
+      ref={refComponent2}
+      className={"full__table " + paddingCorrector(width)}
+      style={{ width: width + "mm", height: height + "mm" }}
+    >
+      {haveAdress && <Adress adress={adress} />}
+      {haveLadderNum && (
+        <LadderNum
+          width={width}
+          ladderN={currentEntarance}
+          headType={headType}
         />
-        <AddLogo />
-      </div>
+      )}
+      <Line haveTableHead={haveTableTop} />
+
+      <Table />
+      <AddLogo refcomp={refComponent} />
     </div>
   );
 }

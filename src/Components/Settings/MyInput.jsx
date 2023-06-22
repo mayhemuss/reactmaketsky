@@ -3,7 +3,7 @@ import React from 'react';
 function MyInput({callBack,place,val}) {
   return (
     <>
-      <input placeholder={place} value={val} onChange={callBack}></input>
+      <input placeholder={place} value={val} onSubmit={callBack}></input>
     </>
   );
 }

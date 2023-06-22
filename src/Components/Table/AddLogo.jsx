@@ -1,12 +1,27 @@
 import React from "react";
-import sky_logo from "../../images/sky_logo.svg";
-import sky_text from "../../images/sky_text.svg";
+import logo_img from "../../images/logo_img.svg";
+import logo_text from "../../images/logo_text.svg";
+import { tableSelector } from "../../store/selectors";
+import { useSelector } from "react-redux";
 
-function AddLogo({ref}) {
+function AddLogo({ refcomp }) {
+  const { allTableSize, currentTableSize } = useSelector(tableSelector);
+  const size = +allTableSize[currentTableSize].width;
+
+  
+  function logoCorrector(size) {
+    if (size < 200) return "small_logo";
+    else if (200 < size < 270) return "medium_logo";
+    else return "big_logo";
+  }
+
   return (
-    <div ref = { ref } className="logo">
-      <img className="sky_logo" alt="sky_logo" src={sky_logo}></img>
-      <img className="sky_text" alt="sky_text" src={sky_text}></img>
+    <div
+      ref={refcomp}
+      className={"standart_logo " + logoCorrector(size)}
+    >
+      <img className="logo_img" alt="logo_img" src={logo_img}></img>
+      <img className="logo_text" alt="logo_text" src={logo_text}></img>
     </div>
   );
 }

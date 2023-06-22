@@ -1,19 +1,17 @@
 import React from "react";
 
-function Line({ thisFloor, haveTableHead }) {
+function Line({ thisFloor, haveTableHead, style, refcomp }) {
   return (
     <>
       {haveTableHead && (
-        <div className="base top line">
+        <div className=" top line">
           <div className="base collumn collumn1">этаж</div>
           <div className="base collumn collumn2">квартиры</div>
         </div>
       )}
 
-      {thisFloor === undefined ? (
-        null
-      ) : (
-        <div className="base line">
+      {thisFloor === undefined ? null : (
+        <div ref={refcomp} className=" line" style={style}>
           <div className="base collumn1 collumn">{thisFloor.floor}</div>
           <div className="base collumn2 collumn">
             {isNaN(thisFloor.roomEnd) ? (
