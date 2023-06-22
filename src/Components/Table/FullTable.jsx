@@ -38,7 +38,7 @@ function FullTable() {
   useEffect(() => {
     const logoref = refComponent.current;
     const currentHigth = logoref.offsetTop + logoref.clientHeight; //высота контейнера
-
+    document.title = `${adress}_п№_${currentEntarance}_${width}_${height}`;
     const fullRef = refComponent2.current;
     const fullHigth =
       fullRef.offsetTop + fullRef.getBoundingClientRect().height; //высота
@@ -49,22 +49,26 @@ function FullTable() {
 
   return (
     <div
-      ref={refComponent2}
-      className={"full__table " + paddingCorrector(width)}
-      style={{ width: width + "mm", height: height + "mm" }}
+      style={{ width: width + "mm", height: height + "mm", display: "flex" }}
     >
-      {haveAdress && <Adress adress={adress} />}
-      {haveLadderNum && (
-        <LadderNum
-          width={width}
-          ladderN={currentEntarance}
-          headType={headType}
-        />
-      )}
-      <Line haveTableHead={haveTableTop} />
+      <div
+        ref={refComponent2}
+        className={"full__table " + paddingCorrector(width)}
+        style={{ width: "100%" }}
+      >
+        {haveAdress && <Adress adress={adress} />}
+        {haveLadderNum && (
+          <LadderNum
+            width={width}
+            ladderN={currentEntarance}
+            headType={headType}
+          />
+        )}
+        <Line haveTableHead={haveTableTop} />
 
-      <Table />
-      <AddLogo refcomp={refComponent} />
+        <Table />
+        <AddLogo refcomp={refComponent} />
+      </div>
     </div>
   );
 }

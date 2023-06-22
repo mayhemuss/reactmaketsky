@@ -7,7 +7,7 @@
 .App {
   display: flex;
   flex-direction: row;
-  width: 700mm;
+  width: 500mm;
 }
 
 .full {
@@ -26,10 +26,12 @@
   text-align: center;
   padding: 2pt;
   display: flex;
-}
-.base_blue_white {
   background-color: rgb(49, 39, 131);
   color: rgb(255, 255, 255);
+}
+.base_blue_white {
+  /* background-color: rgb(49, 39, 131);
+  color: rgb(255, 255, 255); */
 }
 
 .adress {
