@@ -1,17 +1,31 @@
 import React from "react";
 import Line from "./Line";
+import { useSelector } from "react-redux";
+import { entrancesSelector, settingsSelector } from "../../store/selectors";
 
-function Table({ ladder, isReverseTable }) {
-  const allFloor = ladder.arr;
+function Table({ refcomp }) {
+  const { entrance } = useSelector(entrancesSelector);
+
+  const { isReverseTable, fontSize, currentEntarance } =
+    useSelector(settingsSelector);
+
+  const current = entrance[currentEntarance].long;
+
+  const ladder = isReverseTable ? [...current].reverse() : current;
 
   return (
-    <div className="tableBody">
-      {isReverseTable
-        ? Array.from(allFloor)
-            .reverse()
-            .map((elem) => <Line key={elem.floor} thisFloor={elem} />)
-        : allFloor.map((elem) => <Line key={elem.floor} thisFloor={elem} />)}
-    </div>
+    <>
+      {ladder.map((elem, index, array) => {
+        return (
+          <Line
+            style={{ fontSize: fontSize }}
+            key={elem.floor}
+            thisFloor={elem}
+            refcomp={index + 1 === array.length ? refcomp : null}
+          />
+        );
+      })}
+    </>
   );
 }
 
