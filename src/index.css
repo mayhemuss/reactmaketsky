@@ -5,6 +5,10 @@
     url("./fonts/heliosBold2.woff2") format("woff2");
 }
 .App {
+  
+}
+
+.enterance_table{
   display: flex;
   flex-direction: row;
   width: 500mm;

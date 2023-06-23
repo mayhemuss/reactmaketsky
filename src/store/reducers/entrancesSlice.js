@@ -4,6 +4,9 @@ const entriesSlice = createSlice({
   name: "entries",
   initialState: {
     adress: "Пример адреса",
+    streetName:"",
+    streetType:"",
+    buildingNumber:"",
     entrance: {
       "1": {
         long: [
