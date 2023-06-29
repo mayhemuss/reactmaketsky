@@ -16,6 +16,9 @@ function LandingPage(props) {
       <button onClick={() => navigate("/enteranceTable", { replace: false })}>
         Квартирные указатели
       </button>
+      <button onClick={() => navigate("/small_table", { replace: false })}>
+       маленький квартирный указатель
+      </button>
       <button onClick={() => navigate("/adressTable", { replace: false })}>
         Адресный указатель
       </button>

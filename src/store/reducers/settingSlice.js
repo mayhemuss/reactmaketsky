@@ -11,8 +11,29 @@ const settingSlice = createSlice({
     currentEntarance: "1",
     headType: "Парадная №",
     fontSize: 110,
+    streetNameSize: 200,
+    streetTypeSize: 130,
+    buildingNumberSize: 300,
+    buildingNumberIndent: -2,
+    streetTypeGap: 10,
   },
   reducers: {
+    setStreetNameSize(state, { payload }) {
+      state.streetNameSize = payload;
+    },
+    setStreetTypeSize(state, { payload }) {
+      state.streetTypeSize = payload;
+    },
+    setBuildingNumberSize(state, { payload }) {
+      state.buildingNumberSize = payload;
+    },
+    setBuildingNumberIndent(state, { payload }) {
+      state.buildingNumberIndent = payload;
+    },
+    setStreetTypeGap(state, { payload }) {
+      state.streetTypeGap = payload;
+    },
+
     setAdressSize(state, { payload }) {
       state.adressSize = payload;
     },
@@ -64,4 +85,9 @@ export const {
   setIdealSize,
   setFontSize,
   changeFontSize,
+  setStreetNameSize,
+  setStreetTypeSize,
+  setBuildingNumberSize,
+  setBuildingNumberIndent,
+  setStreetTypeGap,
 } = settingSlice.actions;

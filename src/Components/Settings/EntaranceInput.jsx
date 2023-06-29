@@ -3,7 +3,10 @@ import { useDispatch } from "react-redux";
 import {
   setAdress,
   setAllEntarence,
+  setBuildingNumber,
   setEntarance,
+  setStreetName,
+  setStreetType,
 } from "../../store/reducers/entrancesSlice";
 import {
   setCurrentEntarance,
@@ -28,12 +31,15 @@ function EntaranceInput() {
       if (parse.entrance[entranceCount[0]].long[0] === undefined) {
         delete parse.entrance[entranceCount[0]];
       }
+      dispatch(setBuildingNumber(parse.buildingNumber))
+      dispatch(setStreetType(parse.streetType.toLowerCase()))
+      dispatch(setStreetName(parse.streetName))
       dispatch(setAdress(parse.adress));
       dispatch(setEntarance(parse.entrance));
       dispatch(setAllEntarence(Object.keys(parse.entrance)));
       dispatch(setCurrentEntarance(Object.keys(parse.entrance)[0]));
       dispatch(setFontSize(110));
-      
+      setInputData("")
     } catch (error) {
       console.log(error);
     }

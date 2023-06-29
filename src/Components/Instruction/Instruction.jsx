@@ -5,7 +5,7 @@ function Instruction(props) {
   const navigate = useNavigate();
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", marginLeft: "20mm" }}
+      style={{ display: "flex", flexDirection: "column", marginLeft: "20mm" , width:"50mm"}}
     >
       <button onClick={() => navigate("/", { replace: false })}>назад</button>
       <h1>250*500</h1>

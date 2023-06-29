@@ -5,10 +5,9 @@
     url("./fonts/heliosBold2.woff2") format("woff2");
 }
 .App {
-  
 }
 
-.enterance_table{
+.enterance_table {
   display: flex;
   flex-direction: row;
   width: 500mm;
@@ -49,7 +48,7 @@
   font-size: 80px;
 }
 .small_ladderN {
-  font-size: 50px;
+  font-size: 65px;
 }
 
 .line {
@@ -124,14 +123,14 @@
 }
 
 .small_logo {
-  height: 19mm;
-  padding-top: 7mm;
-  padding-bottom: 12mm;
+  height: 18mm;
+  padding-top: 6mm;
+  padding-bottom: 10mm;
 }
 .medium_logo {
-  height: 25mm;
-  padding-top: 10mm;
-  padding-bottom: 15mm;
+  height: 22mm;
+  padding-top: 7mm;
+  padding-bottom: 12mm;
 }
 .big_logo {
   height: 30mm;
@@ -168,4 +167,10 @@
   justify-content: flex-start;
   white-space: inherit;
   margin-right: 5mm;
+}
+.adress_table {
+  font-family: "Helios";
+}
+.small_tab {
+  font-family: "Helios";
 }

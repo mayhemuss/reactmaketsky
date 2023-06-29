@@ -5,6 +5,7 @@ import TableHeadSettings from "./TableHeadSettings";
 import ChoseEntarance from "./ChoseEntarance";
 import SizeSettings from "./SizeSettings";
 import TableSettings from "./TableSettings";
+import LadderNameSettings from "./LadderNameSettings";
 
 function FullSettings() {
   return (
@@ -12,6 +13,7 @@ function FullSettings() {
       <TableSettings />
       <EntaranceInput />
       <TableHeadSettings />
+      <LadderNameSettings/>
       <SizeSettings />
       <ChoseEntarance />
     </div>

@@ -3,12 +3,12 @@ import { createSlice } from "@reduxjs/toolkit";
 const entriesSlice = createSlice({
   name: "entries",
   initialState: {
-    adress: "Пример адреса",
-    streetName:"",
-    streetType:"",
-    buildingNumber:"",
+    adress: "ул. Репищева 20",
+    streetName: "репищева",
+    streetType: "улица",
+    buildingNumber: "20",
     entrance: {
-      "1": {
+      1: {
         long: [
           { floor: 1, roomStart: 1, roomEnd: 2 },
           { floor: 2, roomStart: 3, roomEnd: 4 },
@@ -21,7 +21,7 @@ const entriesSlice = createSlice({
         ],
         short: { start: 1, end: 16 },
       },
-      "2": {
+      2: {
         long: [
           { floor: 1, roomStart: 17, roomEnd: 18 },
           { floor: 2, roomStart: 19, roomEnd: 20 },
@@ -46,10 +46,25 @@ const entriesSlice = createSlice({
     setAllEntarence(state, action) {
       state.allEntrances = action.payload;
     },
+    setBuildingNumber(state, { payload }) {
+      state.buildingNumber = payload;
+    },
+    setStreetType(state, { payload }) {
+      state.streetType = payload;
+    },
+    setStreetName(state, { payload }) {
+      state.streetName = payload;
+    },
   },
 });
 
 export default entriesSlice.reducer;
 
-export const { setAdress, setEntarance, setAllEntarence } =
-  entriesSlice.actions;
+export const {
+  setAdress,
+  setEntarance,
+  setAllEntarence,
+  setStreetName,
+  setStreetType,
+  setBuildingNumber,
+} = entriesSlice.actions;

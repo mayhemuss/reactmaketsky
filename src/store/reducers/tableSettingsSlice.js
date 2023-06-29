@@ -9,7 +9,7 @@ const tableSettingsSlice = createSlice({
       { width: 250, height: 500, type:"pvc" },
       { width: 250, height: 600, type:"pvc" },
     ],
-    currentTableSize: 2,
+    currentTableSize: 1,
     currentType: "pvc"
   },
   reducers: {
