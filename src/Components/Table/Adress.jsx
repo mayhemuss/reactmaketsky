@@ -10,7 +10,7 @@ function Adress() {
     const {adress} = useSelector(entrancesSelector);
 
     return (
-        <div style={{fontSize: adressSize}} className={'base adress '+{color}}>
+        <div style={{fontSize: adressSize}} className={'base adress '+color}>
             {adress.toUpperCase()}
         </div>
     );

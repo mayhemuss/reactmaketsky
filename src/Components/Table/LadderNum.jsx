@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { entrancesSelector, settingsSelector } from "../../store/selectors";
+import { settingsSelector } from "../../store/selectors";
 
 function LadderNum({ width }) {
   const { currentEntarance, headType } = useSelector(settingsSelector);

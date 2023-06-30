@@ -1,23 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import MyRadio from "../Table/MyRadio";
-import {
-  setHaveAdress,
-  setHaveLadderNum,
-  setHaveTableTop,
-  setHeadType,
-  setIsReverseTable,
-  setFontSize,
-} from "../../store/reducers/settingSlice";
+import { setHeadType } from "../../store/reducers/settingSlice";
 
 import { settingsSelector } from "../../store/selectors";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from "react-redux";
 
 function LadderNameSettings(props) {
-
   const dispatch = useDispatch();
-  const { haveAdress, haveLadderNum, haveTableTop, isReverseTable, headType } =
-    useSelector(settingsSelector);
-
+  const { headType } = useSelector(settingsSelector);
 
   const [typesEnt, setTypesEnt] = useState([
     "Парадная №",
@@ -36,7 +26,6 @@ function LadderNameSettings(props) {
     <>
       <div>..............</div>
       Выбери тип названия парадной:
-      
       {typesEnt.map((elem) => {
         return (
           <MyRadio

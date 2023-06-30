@@ -1,23 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setHaveAdress,
   setHaveLadderNum,
   setHaveTableTop,
-  setHeadType,
   setIsReverseTable,
   setFontSize,
 } from "../../store/reducers/settingSlice";
 import MyCheckBox from "../MyCheckBox";
-import MyRadio from "../Table/MyRadio";
 
 import { settingsSelector } from "../../store/selectors";
 
 function TableHeadSettings() {
   const dispatch = useDispatch();
-  const { haveAdress, haveLadderNum, haveTableTop, isReverseTable, headType } =
+  const { haveAdress, haveLadderNum, haveTableTop, isReverseTable } =
     useSelector(settingsSelector);
-
 
   const haveAdressToggle = () => {
     dispatch(setHaveAdress());
@@ -50,7 +47,6 @@ function TableHeadSettings() {
       <MyCheckBox value={isReverseTable} callBack={setIsReverseTableToggle}>
         Перевернуть таблицу
       </MyCheckBox>
-      
     </>
   );
 }

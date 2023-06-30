@@ -7,7 +7,8 @@ import logo_text from "../../images/logo_text.svg";
 import AdressLetter from "./AdressLetter";
 
 function FullAdressTable() {
-  const {adress,streetName, streetType, buildingNumber } = useSelector(entrancesSelector);
+  const { adress, streetName, streetType, buildingNumber } =
+    useSelector(entrancesSelector);
   const {
     streetNameSize,
     streetTypeSize,
@@ -16,9 +17,9 @@ function FullAdressTable() {
     streetTypeGap,
   } = useSelector(settingsSelector);
 
-  useEffect(()=>{
+  useEffect(() => {
     document.title = `${adress}_600_250`;
-  },[streetName, streetType, buildingNumber,adress])
+  }, [streetName, streetType, buildingNumber, adress]);
   return (
     <div
       className="adress_table"
@@ -48,7 +49,7 @@ function FullAdressTable() {
             backgroundColor: "rgb(49, 39, 131)",
             color: "white",
             display: "flex",
-            display: "flex",
+
             flexDirection: "row",
             height: "77mm",
             justifyContent: "space-between",
@@ -91,7 +92,7 @@ function FullAdressTable() {
                 marginBottom: "20mm",
                 display: "flex",
                 marginTop: "-15mm",
-                letterSpacing:`${streetTypeGap}mm`
+                letterSpacing: `${streetTypeGap}mm`,
               }}
             >
               {streetType}
@@ -120,9 +121,9 @@ function FullAdressTable() {
               display: "flex",
               flexDirection: "row",
               gap: "3mm",
-              marginRight: (buildingNumberIndent+18)+"mm",
-              alignItems:"flex-end",
-              marginBottom:"10mm"
+              marginRight: buildingNumberIndent + 18 + "mm",
+              alignItems: "flex-end",
+              marginBottom: "10mm",
             }}
           >
             {buildingNumber
