@@ -4,12 +4,65 @@
     url("./fonts/heliosBold1.woff") format("woff"),
     url("./fonts/heliosBold2.woff2") format("woff2");
 }
+@media print {
+  .settings > div {
+    display: none;
+    width: 1%;
+  }
+
+  .instruction > button {
+    display: none;
+  }
+  /* display: none; */
+
+  /* body {
+    visibility: hidden;
+  } */
+
+  .full_sticker {
+    visibility: visible;
+  }
+}
+
 .App {
+  font-family: "Helios";
+}
+body {
+  margin-left: 2.5mm;
+  margin-top: 2mm;
+}
+
+.zeroSize {
+  height: 0;
+  width: 0;
+}
+.absolute {
+  position: absolute;
+}
+.black {
+  background-color: rgb(51, 51, 50);
+}
+.green {
+  background-color: rgb(94, 176, 50);
+}
+.z1 {
+  z-index: 1;
+}
+.z3 {
+  z-index: 3;
+}
+
+.flex {
+  display: flex;
+}
+.row {
+  flex-direction: row;
+}
+.collumn {
+  flex-direction: column;
 }
 
 .enterance_table {
-  display: flex;
-  flex-direction: row;
   width: 500mm;
 }
 
@@ -17,24 +70,20 @@
   height: 100%;
   justify-content: space-between;
 }
-.fff {
-  /* height: 100%; */
-  display: flex;
-  flex-direction: column;
-  gap: 4mm;
-}
+
 .base {
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* padding: 1rem; */
-  display: flex;
+}
+.base_blue_white {
   background-color: rgb(49, 39, 131);
   color: rgb(255, 255, 255);
 }
-.base_blue_white {
-  /* background-color: rgb(49, 39, 131);
-  color: rgb(255, 255, 255); */
+.base_white_black {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px black solid;
 }
 
 .adress {
@@ -55,8 +104,7 @@
   gap: 2.5mm;
   height: 100%;
   align-content: stretch;
-  display: flex;
-  flex-direction: row;
+
   width: 100%;
 
   justify-content: space-between;
@@ -69,20 +117,17 @@
   width: 70%;
 }
 
-.collumn {
-  /* border: 1px solid red; */
+/* .collumn {
   height: 100%;
-}
+} */
 .full__table {
-  display: flex;
   gap: 2.8mm;
   flex-direction: column;
   align-content: stretch;
   width: 100%;
   text-transform: uppercase;
   font-family: "Helios";
-  display: flex;
-  flex-direction: column;
+
   border: 1px dotted black;
 }
 
@@ -102,8 +147,6 @@
   padding-right: 15mm;
 }
 .settings {
-  display: flex;
-  flex-direction: column;
   width: 80mm;
   margin-left: 20mm;
   gap: 3mm;
@@ -115,8 +158,6 @@
 }
 
 .standart_logo {
-  display: flex;
-  flex-direction: row;
   height: 25mm;
   align-items: flex-end;
   justify-content: space-between;
@@ -147,7 +188,6 @@
 }
 
 .left {
-  display: flex;
   width: 40%;
   justify-content: flex-end;
   white-space: inherit;
@@ -156,14 +196,13 @@
 
 .center {
   width: 20%;
-  display: flex;
+
   justify-content: center;
   white-space: inherit;
 }
 
 .right {
   width: 40%;
-  display: flex;
   justify-content: flex-start;
   white-space: inherit;
   margin-right: 5mm;
@@ -171,6 +210,7 @@
 .adress_table {
   font-family: "Helios";
 }
-.small_tab {
-  font-family: "Helios";
+
+.gap15{
+  gap: 15mm;
 }

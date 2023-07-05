@@ -23,7 +23,7 @@ function LadderNameSettings(props) {
     dispatch(setHeadType(e.target.value));
   };
   return (
-    <>
+    <div>
       <div>..............</div>
       Выбери тип названия парадной:
       {typesEnt.map((elem) => {
@@ -40,7 +40,7 @@ function LadderNameSettings(props) {
       })}
       <button onClick={typesHandler}>добавить свое</button>
       <div>...................</div>
-    </>
+    </div>
   );
 }
 

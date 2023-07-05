@@ -1,12 +1,15 @@
 import React, { useEffect } from "react";
 import FullAdressName from "./FullAdressName";
-import { entrancesSelector, settingsSelector } from "../../store/selectors";
-import { useSelector } from "react-redux";
+import { entrancesSelector, settingsSelector, tableSelector } from "../../store/selectors";
+import { useDispatch, useSelector } from "react-redux";
 import logo_img from "../../images/logo_img.svg";
 import logo_text from "../../images/logo_text.svg";
 import AdressLetter from "./AdressLetter";
+import { addTableSize } from "../../store/reducers/tableSettingsSlice";
 
 function FullAdressTable() {
+  const dispatch = useDispatch();
+
   const { adress, streetName, streetType, buildingNumber } =
     useSelector(entrancesSelector);
   const {
@@ -16,41 +19,41 @@ function FullAdressTable() {
     buildingNumberIndent,
     streetTypeGap,
   } = useSelector(settingsSelector);
+  
 
   useEffect(() => {
     document.title = `${adress}_600_250`;
   }, [streetName, streetType, buildingNumber, adress]);
+
+  
+
   return (
     <div
-      className="adress_table"
+      className="adress_table flex collumn"
       style={{
         width: "600mm",
         height: "250mm",
-        display: "flex",
+        
         border: "1px solid black",
         // padding: "20mm",
-        flexDirection: "column",
+        
         color: "white",
       }}
     >
-      <div
+      <div className="flex collumn"
         style={{
           height: "100%",
-          display: "flex",
-          flexDirection: "column",
+          
           justifyContent: "space-between",
           margin: "20mm",
         }}
       >
-        <div
+        <div className="flex row full_adress base_blue_white"
           style={{
             // width: "100%",
             // height: "100%",
-            backgroundColor: "rgb(49, 39, 131)",
-            color: "white",
-            display: "flex",
-
-            flexDirection: "row",
+            
+            
             height: "77mm",
             justifyContent: "space-between",
             alignItems: "center",
@@ -59,16 +62,16 @@ function FullAdressTable() {
             fontSize: `${streetNameSize}pt`,
             // width: "100%",
           }}
-          className="full_adress"
+          
         >
           <FullAdressName />
         </div>
         <div
-          className="111"
+          className="111 base_blue_white"
           style={{
             display: "flex",
             flexDirection: "row",
-            backgroundColor: "rgb(49, 39, 131)",
+            
             height: "100%",
             justifyContent: "space-between",
           }}

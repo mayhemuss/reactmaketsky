@@ -1,26 +1,54 @@
 import React from "react";
 
-function Line({ thisFloor, haveTableHead, style, refcomp }) {
+function Line({ thisFloor, haveTableHead, style, refcomp, type }) {
   return (
     <>
       {haveTableHead && (
-        <div className=" top line">
-          <div className="base collumn collumn1">этаж</div>
-          <div className="base collumn collumn2">квартиры</div>
+        <div className="flex row top line">
+          <div
+            className={
+              (type === "sticker" ? "base_white_black " : "base_blue_white ") +
+              "base flex collumn1"
+            }
+          >
+            этаж
+          </div>
+          <div
+            className={
+              (type === "sticker" ? "base_white_black " : "base_blue_white ") +
+              "base flex collumn2"
+            }
+          >
+            квартиры
+          </div>
         </div>
       )}
 
       {thisFloor === undefined ? null : (
-        <div ref={refcomp} className=" line" style={style}>
-          <div className="base collumn1 collumn">{thisFloor.floor}</div>
-          <div className="base collumn2 collumn">
-            {isNaN(thisFloor.roomEnd) ? (
+        <div ref={refcomp} className="flex row line" style={style}>
+          <div
+            className={
+              (type === "sticker" ? "base_white_black " : "base_blue_white ") +
+              "base collumn1 flex row"
+            }
+          >
+            {thisFloor.floor}
+          </div>
+          <div
+            className={
+              (type === "sticker" ? "base_white_black " : "base_blue_white ") +
+              "base collumn2 flex row"
+            }
+          >
+            {thisFloor.roomStart === "" ? (
+              <>{thisFloor.roomEnd}</>
+            ) : isNaN(thisFloor.roomEnd) ? (
               <>{thisFloor.roomStart + " – " + thisFloor.roomEnd}</>
             ) : (
               <>
-                <div className="left">{thisFloor.roomStart}</div>
-                <div className="center">–</div>
-                <div className="right">{thisFloor.roomEnd}</div>
+                <div className="left flex">{thisFloor.roomStart}</div>
+                <div className="center flex">–</div>
+                <div className="right flex">{thisFloor.roomEnd}</div>
               </>
             )}
           </div>

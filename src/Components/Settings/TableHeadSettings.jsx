@@ -33,7 +33,7 @@ function TableHeadSettings() {
   };
 
   return (
-    <>
+    <div>
       Настройки:
       <MyCheckBox value={haveAdress} callBack={haveAdressToggle}>
         Нужен адресс?
@@ -47,7 +47,7 @@ function TableHeadSettings() {
       <MyCheckBox value={isReverseTable} callBack={setIsReverseTableToggle}>
         Перевернуть таблицу
       </MyCheckBox>
-    </>
+    </div>
   );
 }
 

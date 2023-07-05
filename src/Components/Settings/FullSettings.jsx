@@ -9,7 +9,7 @@ import LadderNameSettings from "./LadderNameSettings";
 
 function FullSettings() {
   return (
-    <div className="settings">
+    <div className="settings flex collumn">
       <TableSettings />
       <EntaranceInput />
       <TableHeadSettings />

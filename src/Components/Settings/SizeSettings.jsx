@@ -23,7 +23,7 @@ function SizeSettings() {
   };
 
   return (
-    <>
+    <div>
       размер адреса:
       <form onSubmit={submitInput}>
         <input
@@ -54,7 +54,7 @@ function SizeSettings() {
           + +
         </button>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -13,6 +13,7 @@ import {
 } from "../../store/selectors";
 import { tableSizeCorrector } from "../../function/tableSizeCorrector";
 import { paddingCorrector } from "../../function/paddingCorrector";
+import ColorBackGround from "./ColorBackGround";
 
 function FullTable() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function FullTable() {
 
   const height = allTableSize[currentTableSize].height;
   const width = allTableSize[currentTableSize].width;
+  const type = allTableSize[currentTableSize].type;
 
   useEffect(() => {
     const logoref = refComponent.current;
@@ -49,24 +51,33 @@ function FullTable() {
 
   return (
     <div
-      style={{ width: width + "mm", height: height + "mm", display: "flex" }}
+    className="flex"
+      style={{
+        width: width + "mm",
+        height: height + "mm",
+        
+      }}
     >
+      {type === "sticker" ? (
+        <ColorBackGround width={width} height={height} />
+      ) : null}
       <div
         ref={refComponent2}
-        className={"full__table " + paddingCorrector(width)}
-        style={{ width: "100%" }}
+        className={"full__table flex collumn " + paddingCorrector(width)}
+        style={{ width: "100%", zIndex: 10 }}
       >
-        {haveAdress && <Adress adress={adress} />}
+        {haveAdress && <Adress type={type} adress={adress} />}
         {haveLadderNum && (
           <LadderNum
             width={width}
             ladderN={currentEntarance}
             headType={headType}
+            type={type}
           />
         )}
-        <Line haveTableHead={haveTableTop} />
+        <Line type={type} haveTableHead={haveTableTop} />
 
-        <Table />
+        <Table type={type} />
         <AddLogo refcomp={refComponent} />
       </div>
     </div>

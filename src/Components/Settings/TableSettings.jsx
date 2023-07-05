@@ -41,7 +41,7 @@ function TableSettings() {
   }
 
   return (
-    <>
+    <div>
       <div>выбор таблички</div>
       {allTableSize.map((elem, index) => {
         return (
@@ -51,7 +51,8 @@ function TableSettings() {
             callBack={setTablewidthHandler}
             current={currentTableSize}
           >
-            ширина {elem.width} высота {elem.height}
+            шир: {elem.width} выс: {elem.height} тип:
+            {elem.type === "sticker" ? " наклейка" : " табличка"}
           </MyRadio>
         );
       })}
@@ -83,11 +84,11 @@ function TableSettings() {
             наклейка
           </div>
 
-          <button>ddtcnb</button>
+          <button>Добавить</button>
         </form>
       )}
       <div>................</div>
-    </>
+    </div>
   );
 }
 

@@ -5,7 +5,9 @@ import LadderNum from "../Table/LadderNum";
 import ShortEnterance from "./ShortEnterance";
 
 function SmallTable() {
-  useEffect(() => {}, []);
+
+
+
 
   return (
     <div

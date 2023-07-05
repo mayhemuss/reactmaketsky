@@ -1,22 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import EntaranceInput from "../Components/Settings/EntaranceInput";
 import Instruction from "../Components/Instruction/Instruction";
 import FullAdressTable from "../Components/AdressTable/FullAdressTable";
 import AdressSizeSettings from "../Components/Settings/AdressSizeSettings";
 
-function AdressTavlePage(props) {
+function AdressTablePage(props) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap:"15mm" }}>
+    <div className="flex collumn gap15" >
       <FullAdressTable />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div className="flex row">
         <div>
           <EntaranceInput />
           <AdressSizeSettings />
         </div>
-        <Instruction />
+        <Instruction height={250} width={600} />
       </div>
     </div>
   );
 }
 
-export default AdressTavlePage;
+export default AdressTablePage;

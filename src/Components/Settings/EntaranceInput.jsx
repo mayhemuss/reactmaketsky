@@ -46,14 +46,14 @@ function EntaranceInput() {
   };
 
   return (
-    <>
+    <div>
       Введи данные из экселя:
       <form onSubmit={changeInput}>
         <input placeholder="данные из exel" type="text" value={inputData} onChange={inputDataHandler} />
         <button type="submit">ввести</button>
       </form>
       <div>...................</div>
-    </>
+    </div>
   );
 }
 

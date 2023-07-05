@@ -20,7 +20,7 @@ function ChoseEntarance() {
   const {allEntrances} = useSelector(entrancesSelector);
 
   return (
-    <>
+    <div>
       <div>...................</div>
       Выбор парадной:
       {allEntrances.map((elem) => {
@@ -35,7 +35,7 @@ function ChoseEntarance() {
           </MyRadio>
         );
       })}
-    </>
+    </div>
   );
 }
 

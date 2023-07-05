@@ -18,7 +18,7 @@ function AddLogo({ refcomp }) {
   return (
     <div
       ref={refcomp}
-      className={"standart_logo " + logoCorrector(size)}
+      className={"standart_logo flex row " + logoCorrector(size)}
     >
       <img className="logo_img" alt="logo_img" src={logo_img}></img>
       <img className="logo_text" alt="logo_text" src={logo_text}></img>
