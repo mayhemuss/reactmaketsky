@@ -52,7 +52,7 @@ function EntaranceInput() {
         <input placeholder="данные из exel" type="text" value={inputData} onChange={inputDataHandler} />
         <button type="submit">ввести</button>
       </form>
-      <div>...................</div>
+      
     </div>
   );
 }

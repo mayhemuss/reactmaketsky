@@ -10,7 +10,7 @@ const start = entrance[currentEntarance].short.start
 const end = entrance[currentEntarance].short.end
   return (
     <div>
-      {start} – {end}
+      КВ. {start} – {end}
     </div>
   );
 }

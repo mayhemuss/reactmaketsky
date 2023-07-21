@@ -3,7 +3,7 @@ import Line from "./Line";
 import { useSelector } from "react-redux";
 import { entrancesSelector, settingsSelector } from "../../store/selectors";
 
-function Table({ refcomp,type }) {
+function Table({ type }) {
   const { entrance } = useSelector(entrancesSelector);
 
   const { isReverseTable, fontSize, currentEntarance } =
@@ -15,14 +15,13 @@ function Table({ refcomp,type }) {
 
   return (
     <>
-      {ladder.map((elem, index, array) => {
+      {ladder.map((elem) => {
         return (
           <Line
             style={{ fontSize: fontSize }}
             type={type}
-            key={elem.floor}
+            key={elem.floor+elem.roomEnd}
             thisFloor={elem}
-            refcomp={index + 1 === array.length ? refcomp : null}
           />
         );
       })}
