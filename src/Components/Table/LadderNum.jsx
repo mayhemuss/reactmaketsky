@@ -2,20 +2,19 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { settingsSelector } from "../../store/selectors";
 
-function LadderNum({ width, type, haveLadderNum }) {
+function LadderNum({ width, type }) {
   const { currentEntarance, headType } = useSelector(settingsSelector);
-  const styleType =
-    type === "sticker" ? "base_white_black " : "base_blue_white ";
-  const sizeStyle = width > 190 ? "big_ladderN" : "small_ladderN";
   return (
-    <>
-      {haveLadderNum && (
-        <div className={"base flex " + styleType + sizeStyle}>
-          {headType.toUpperCase()}
-          {currentEntarance}
-        </div>
-      )}
-    </>
+    <div
+      className={
+        "base flex " +
+        (type === "sticker" ? "base_white_black " : "base_blue_white ") +
+        (width > 190 ? "big_ladderN" : "small_ladderN")
+      }
+    >
+      {headType.toUpperCase()}
+      {currentEntarance}
+    </div>
   );
 }
 

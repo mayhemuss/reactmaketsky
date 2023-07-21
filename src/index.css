@@ -1,13 +1,21 @@
 @font-face {
-  font-family: "Helios";
+  font-family: "HeliosBold";
   src: url("./fonts/heliosBold.eot") format("embedded-opentype"),
     url("./fonts/heliosBold1.woff") format("woff"),
     url("./fonts/heliosBold2.woff2") format("woff2");
 }
+
+@font-face {
+  font-family: 'HeliosRegular';
+  src: url('/fonts/heliosRegular.eot') format('embedded-opentype'),
+    url('/fonts/heliosRegular1.woff') format('woff'),
+    url('fonts/heliosRegular2.woff2') format('woff2');
+}
 @media print {
-  .settings > div {
-    display: none;
-    width: 1%;
+  .settings {
+    /* display: none; */
+    width: 1mm;
+    visibility: hidden;
   }
 
   .instruction > button {
@@ -24,14 +32,19 @@
   }
 }
 
-.App {
-  font-family: "Helios";
+.App * {
+  font-family: "HeliosBold";
 }
 body {
   margin-left: 2.5mm;
   margin-top: 2mm;
 }
-
+.h100 {
+  height: 100%;
+}
+.w100 {
+  width: 100%;
+}
 .zeroSize {
   height: 0;
   width: 0;
@@ -50,6 +63,12 @@ body {
 }
 .z3 {
   z-index: 3;
+}
+.z5 {
+  z-index: 5;
+}
+.z10 {
+  z-index: 10;
 }
 
 .flex {
@@ -163,18 +182,23 @@ body {
   justify-content: space-between;
 }
 
+.micro_logo {
+  height: 23mm;
+  padding-top: 6mm;
+  padding-bottom: 10mm;
+}
 .small_logo {
   height: 18mm;
   padding-top: 6mm;
   padding-bottom: 10mm;
 }
 .medium_logo {
-  height: 22mm;
+  height: 25mm;
   padding-top: 7mm;
   padding-bottom: 12mm;
 }
 .big_logo {
-  height: 30mm;
+  height: 32mm;
   padding-top: 10mm;
   padding-bottom: 15mm;
 }
@@ -196,11 +220,27 @@ body {
 
 .center {
   width: 20%;
-
   justify-content: center;
   white-space: inherit;
 }
-
+.flex_start {
+  justify-content: flex-start;
+}
+.flex_end {
+  justify-content: flex-end;
+}
+.flex_centr {
+  justify-content: center;
+}
+.space_between {
+  justify-content: space-between;
+}
+.space_around {
+  justify-content: space-around;
+}
+.align_center {
+  align-items: center;
+}
 .right {
   width: 40%;
   justify-content: flex-start;
@@ -211,6 +251,20 @@ body {
   font-family: "Helios";
 }
 
-.gap15{
+.gap15 {
   gap: 15mm;
+}
+.gap3 {
+  gap: 3mm;
+}
+
+.standart_border {
+  border: 1px black solid;
+}
+
+.short_enterance_container {
+  height: 40mm;
+  font-size: 80pt;
+  padding-top: 3mm;
+  padding-bottom: 3mm;
 }

@@ -11,7 +11,7 @@ const settingSlice = createSlice({
     currentEntarance: "1",
     headType: "Парадная №",
     fontSize: 110,
-    streetNameSize: 200,
+    streetNameSize: 220,
     streetTypeSize: 130,
     buildingNumberSize: 300,
     buildingNumberIndent: -2,

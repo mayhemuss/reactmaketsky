@@ -11,7 +11,6 @@ function LadderNameSettings(props) {
 
   const [typesEnt, setTypesEnt] = useState([
     "Парадная №",
-    "Парадная ",
     "Лестница №",
     "Подъезд №",
     "Секция ",
@@ -25,7 +24,7 @@ function LadderNameSettings(props) {
   };
   return (
     <div>
-      
+      <div>..............</div>
       Выбери тип названия парадной:
       {typesEnt.map((elem) => {
         return (
@@ -40,7 +39,7 @@ function LadderNameSettings(props) {
         );
       })}
       <button onClick={typesHandler}>добавить свое</button>
-      
+      <div>...................</div>
     </div>
   );
 }

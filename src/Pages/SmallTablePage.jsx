@@ -19,12 +19,15 @@ function SmallTablePage() {
   }, [currentEntarance, adress]);
 
   return (
-    <div style={{ display: "flex", flexDirection: "row", gap: "10mm" }}>
+    <div className="flex row" style={{ gap: "10mm" }}>
       <SmallTable />
       <div style={{ width: "50mm" }}>
         <EntaranceInput />
+        <div>...................</div>
         <LadderNameSettings />
+        <div>...................</div>
         <SizeSettings />
+        <div>...................</div>
         <ChoseEntarance />
       </div>
       <Instruction width={210} height={148} />

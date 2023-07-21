@@ -4,13 +4,13 @@ const tableSettingsSlice = createSlice({
   name: "tableSettingsSlice",
   initialState: {
     allTableSize: [
-      { width: 148, height: 297, type:"sticker" },
-      { width: 200, height: 400, type:"pvc" },
-      { width: 250, height: 500, type:"pvc" },
-      { width: 250, height: 600, type:"pvc" },
+      { width: 200, height: 400, type: "pvc" },
+      { width: 250, height: 500, type: "pvc" },
+      { width: 250, height: 600, type: "pvc" },
+      { width: 148, height: 297, type: "sticker" },
     ],
     currentTableSize: 1,
-    currentType: "pvc"
+    currentType: "pvc",
   },
   reducers: {
     addTableSize(state, { payload }) {
@@ -24,5 +24,4 @@ const tableSettingsSlice = createSlice({
 
 export default tableSettingsSlice.reducer;
 
-export const { addTableSize, setCurrentTableSize } =
-  tableSettingsSlice.actions;
+export const { addTableSize, setCurrentTableSize } = tableSettingsSlice.actions;

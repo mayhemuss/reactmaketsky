@@ -1,0 +1,17 @@
+.settings * {
+  font-size: 20pt;
+}
+@media print {
+  .settings,
+  .settings * {
+    display: none;
+  }
+  .instruction * {
+    flex-direction: row;
+    gap: 10mm;
+    font-size: 70px;
+  }
+}
+.instruction * {
+  font-size: 20pt;
+}

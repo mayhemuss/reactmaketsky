@@ -10,6 +10,7 @@ function EnteranceTablePage() {
 
   const height = allTableSize[currentTableSize].height;
   const width = allTableSize[currentTableSize].width;
+  
   return (
     <div className="enterance_table flex row">
       <FullTable />
