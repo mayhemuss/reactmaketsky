@@ -87,7 +87,7 @@ function TableSettings() {
           <button>Добавить</button>
         </form>
       )}
-      <div>................</div>
+     
     </div>
   );
 }

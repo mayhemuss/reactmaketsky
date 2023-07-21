@@ -3,7 +3,6 @@ import Adress from "./Adress";
 import LadderNum from "./LadderNum";
 import Table from "./Table";
 import AddLogo from "./AddLogo";
-import Line from "./Line";
 import { useDispatch, useSelector } from "react-redux";
 import { changeFontSize } from "../../store/reducers/settingSlice";
 import {
@@ -14,10 +13,10 @@ import {
 import { tableSizeCorrector } from "../../function/tableSizeCorrector";
 import { paddingCorrector } from "../../function/paddingCorrector";
 import ColorBackGround from "./ColorBackGround";
+import TopLine from "./TopLine";
 
 function FullTable() {
   const dispatch = useDispatch();
-
   const {
     haveAdress,
     currentEntarance,
@@ -30,58 +29,56 @@ function FullTable() {
   const { adress, entrance } = useSelector(entrancesSelector);
   const { allTableSize, currentTableSize } = useSelector(tableSelector);
 
-  const refComponent = createRef();
-  const refComponent2 = createRef();
+  const logoRef = createRef();
+  const allTableRef = createRef();
 
   const height = allTableSize[currentTableSize].height;
   const width = allTableSize[currentTableSize].width;
   const type = allTableSize[currentTableSize].type;
 
   useEffect(() => {
-    const logoref = refComponent.current;
-    const currentHigth = logoref.offsetTop + logoref.clientHeight; //высота контейнера
-    document.title = `${adress}_п№_${currentEntarance}_${width}_${height}`;
-    const fullRef = refComponent2.current;
-    const fullHigth =
-      fullRef.offsetTop + fullRef.getBoundingClientRect().height; //высота
+    const logo = logoRef.current;
+    const table = allTableRef.current;
+    const correctHeight = logo.offsetTop + logo.clientHeight; //растояние до логотипа
+    const tableHeight = table.offsetTop + table.getBoundingClientRect().height; //растояние до низа всей таблицы
     dispatch(
-      changeFontSize(tableSizeCorrector(fullHigth, currentHigth, fontSize))
+      changeFontSize(tableSizeCorrector(tableHeight, correctHeight, fontSize))
     );
   }, [fontSize, currentEntarance, currentTableSize, entrance, adressSize]);
 
+  useEffect(() => {
+    document.title = `${adress}_п№_${currentEntarance}_${width}_${height}`;
+  }, [currentEntarance, width, height, adress]);
+
   return (
     <div
-    className="flex"
+      className="flex"
       style={{
         width: width + "mm",
         height: height + "mm",
-        
       }}
     >
-      {type === "sticker" ? (
-        <ColorBackGround width={width} height={height} />
-      ) : null}
+      <ColorBackGround />
       <div
-        ref={refComponent2}
-        className={"full__table flex collumn " + paddingCorrector(width)}
-        style={{ width: "100%", zIndex: 10 }}
+        ref={allTableRef}
+        className={
+          "full__table flex collumn w100 z5 " + paddingCorrector(width)
+        }
       >
-        {haveAdress && <Adress type={type} adress={adress} />}
-        {haveLadderNum && (
-          <LadderNum
-            width={width}
-            ladderN={currentEntarance}
-            headType={headType}
-            type={type}
-          />
-        )}
-        <Line type={type} haveTableHead={haveTableTop} />
+        <Adress type={type} adress={adress} haveAdress={haveAdress} />
 
+        <LadderNum
+          width={width}
+          ladderN={currentEntarance}
+          headType={headType}
+          type={type}
+          haveLadderNum={haveLadderNum}
+        />
+        <TopLine type={type} haveTableHead={haveTableTop} />
         <Table type={type} />
-        <AddLogo refcomp={refComponent} />
+        <AddLogo width={width} logoRef={logoRef} />
       </div>
     </div>
   );
 }
-
 export default FullTable;

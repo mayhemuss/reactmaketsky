@@ -1,99 +1,52 @@
-import React, { useEffect } from "react";
+import React  from "react";
 import AddLogo from "../Table/AddLogo";
 import Adress from "../Table/Adress";
 import LadderNum from "../Table/LadderNum";
 import ShortEnterance from "./ShortEnterance";
 
 function SmallTable() {
-
-
-
-
   return (
     <div
-      className="small_tab"
+      className="small_tab flex collumn standart_border"
       style={{
         width: "210mm",
         height: "148mm",
-        border: "1px dotted black",
-
-        display: "flex",
-        flexDirection: "column",
       }}
     >
       <div
+        className="flex collumn h100 space_between"
         style={{
           marginRight: "8mm",
           marginLeft: "8mm",
           marginTop: "8mm",
-          // paddingBottom: "-18mm",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "stretch",
-          alignContent: "stretch",
-          justifyContent: "space-between",
-          // gap: "2.5mm",
-          height: "100%",
         }}
       >
-        <div
-          style={{ display: "flex", flexDirection: "column", height: "100%" }}
-        >
+        <div className="flex collumn h100">
           <div
+            className="base_blue_white flex w100 flex_centr align_center"
             style={{
-              backgroundColor: "rgb(49, 39, 131)",
-              width: "100%",
               height: "40mm",
-              display: "flex",
-              color: "white",
-              justifyContent: "center",
-              alignItems: "center",
               fontSize: "40pt",
               marginBottom: "3mm",
             }}
           >
-            <Adress/>
+            <Adress haveAdress={true} />
           </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              backgroundColor: "rgb(49, 39, 131)",
-              color: "white",
-              width: "100%",
-              // height: "25mm",
-              justifyContent: "space-between",
-              alignItems: "center",
-              height: "100%",
-              // height: "80mm",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                justifyContent: "center",
-              }}
-              className="numb"
-            >
-              <LadderNum width={189}/>
+          <div className="flex collumn base_blue_white h100 w100 space_between align_center">
+            <div className="numb flex collumn h100 flex_centr">
+              <LadderNum haveLadderNum={true} width={189} />
             </div>
             <div
+              className="room flex collumn h100 flex_start"
               style={{
-                display: "flex",
-                flexDirection: "column",
-                height: "100%",
-                justifyContent: "flex-start",
-                fontSize:"80pt"
+                fontSize: "80pt",
               }}
-              className="room"
             >
-              <ShortEnterance/>
+              <ShortEnterance />
             </div>
           </div>
         </div>
-        <AddLogo />
+        <AddLogo width={210} />
       </div>
     </div>
   );

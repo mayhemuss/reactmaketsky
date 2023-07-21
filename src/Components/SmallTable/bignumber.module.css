@@ -1,0 +1,53 @@
+.full_table {
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  width: 210mm;
+  height: 297mm;
+}
+.full_table * {
+  display: flex;
+}
+.table_container {
+  flex-direction: column;
+  height: 100%;
+  padding-top: 8mm;
+  padding-left: 8mm;
+  padding-right: 8mm;
+  justify-content: space-between;
+}
+.table {
+  gap: 3mm;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.top_table {
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  color: white;
+  width: 100%;
+  justify-content: space-between;
+  background-color: rgb(49, 39, 131);
+  padding-top: 7mm;
+}
+.ladder_name {
+  font-size: 100pt;
+}
+.big_number {
+  justify-content: flex-end;
+  height: 100mm;
+  font-size: 500pt;
+  line-height: 0.2;
+}
+.short_enterance {
+  height: 40mm;
+  font-size: 80pt;
+  padding-top: 3mm;
+  padding-bottom: 3mm;
+  color: white;
+  background-color: rgb(49, 39, 131);
+  justify-content: center;
+  align-items: center;
+}

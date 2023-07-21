@@ -11,10 +11,15 @@ function FullSettings() {
   return (
     <div className="settings flex collumn">
       <TableSettings />
+      <div>...................</div>
       <EntaranceInput />
+      <div>...................</div>
       <TableHeadSettings />
+      <div>...................</div>
       <LadderNameSettings/>
+      <div>...................</div>
       <SizeSettings />
+      <div>...................</div>
       <ChoseEntarance />
     </div>
   );
