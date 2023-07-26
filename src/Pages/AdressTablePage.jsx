@@ -3,19 +3,22 @@ import EntaranceInput from "../Components/Settings/EntaranceInput";
 import Instruction from "../Components/Instruction/Instruction";
 import FullAdressTable from "../Components/AdressTable/FullAdressTable";
 import AdressSizeSettings from "../Components/Settings/AdressSizeSettings";
-import style from "./adresstable.module.css"
+import styles from "./style.module.css";
+import print from "./printhide.module.css";
 
 function AdressTablePage(props) {
   return (
-    <div className="flex collumn gap15">
+    <div className={styles.container_vertical}>
       <FullAdressTable />
-      <div className="flex row">
-        <div className={style.settings}>
+      <div className={styles.container_horizontal}>
+        <div className={(print.print_hide+" "+ styles.settings)}>
           <EntaranceInput />
           <div>...................</div>
           <AdressSizeSettings />
-        </div><div className={style.instruction}>
-        <Instruction height={250} width={600} /></div>
+        </div>
+        
+          <Instruction orientering="horizontal" height={250} width={600} />
+        
       </div>
     </div>
   );

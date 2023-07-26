@@ -12,7 +12,7 @@ function ChoseEntarance() {
   const dispatch = useDispatch();
   const currentEntaranceHandler = (e) => {
     dispatch(setCurrentEntarance(e.target.value));
-    dispatch(setFontSize(110));
+    dispatch(setFontSize(150));
   };
   const { currentEntarance } = useSelector(settingsSelector);
   const { allEntrances } = useSelector(entrancesSelector);

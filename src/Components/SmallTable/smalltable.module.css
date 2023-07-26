@@ -1,0 +1,95 @@
+.full_table {
+  /* // small_tab flex collumn standart_border */
+  display: flex;
+  flex-direction: column;
+  border: 1px black solid;
+  width: 210mm;
+  height: 148mm;
+}
+
+.container {
+  /* flex collumn h100 space_between
+  marginRight: "8mm",
+          marginLeft: "8mm",
+          marginTop: "8mm", */
+  /* display: flex; */
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  flex-direction: column;
+  margin-right: 8mm;
+  margin-top: 8mm;
+  margin-left: 8mm;
+}
+.content_container {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.adress {
+  /* base_blue_white flex w100 flex_centr align_center"
+            style={{
+              height: "40mm",
+              fontSize: "40pt",
+              marginBottom: "3mm",
+            }} */
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 40mm;
+  font-size: 40pt;
+  margin-bottom: 3mm;
+  color: rgb(255, 255, 255);
+  background-color: rgb(49, 39, 131);
+}
+
+.bottom_container {
+  /* flex collumn base_blue_white h100 w100 space_between align_center */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  background-color: rgb(49, 39, 131);
+}
+.ladder_number {
+  /* numb flex collumn h100 flex_centr */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.rooms {
+  /* room flex collumn h100 flex_start"
+              style={{
+                fontSize: "80pt",
+              }} */
+  display: flex;
+  font-size: 85pt;
+  height: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
+  line-height: 0.8;
+}
+.logo_container {
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+  height: 25mm;
+  padding-top: 7mm;
+  padding-bottom: 8mm;
+  align-items: flex-end;
+}
+
+.logo_img {
+  display: flex;
+  height: 100%;
+}
+.logo_text {
+  display: flex;
+  height: 90%;
+}

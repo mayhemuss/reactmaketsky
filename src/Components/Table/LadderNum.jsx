@@ -10,7 +10,8 @@ function LadderNum({ width, type, haveLadderNum }) {
   return (
     <>
       {haveLadderNum && (
-        <div className={"base flex " + styleType + sizeStyle}>
+        <div style={{height:"60%"}}
+         className={"base flex " + styleType + sizeStyle}>
           {headType.toUpperCase()}
           {currentEntarance}
         </div>

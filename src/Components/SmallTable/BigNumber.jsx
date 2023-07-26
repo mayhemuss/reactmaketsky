@@ -1,7 +1,6 @@
 import React from "react";
 import AddLogo from "../Table/AddLogo";
 import ShortEnterance from "./ShortEnterance";
-
 import { settingsSelector } from "../../store/selectors";
 import { useSelector } from "react-redux";
 import style from "./bignumber.module.css";

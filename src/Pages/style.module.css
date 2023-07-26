@@ -1,0 +1,17 @@
+.container_horizontal {
+  display: flex;
+  flex-direction: row;
+  gap: 10mm;
+}
+.container_vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 10mm;
+}
+
+.settings {
+  font-size: xx-large;
+}
+.settings * {
+  font-size: xx-large;
+}

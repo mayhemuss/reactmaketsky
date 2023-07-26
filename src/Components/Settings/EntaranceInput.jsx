@@ -11,8 +11,8 @@ import {
 import {
   setCurrentEntarance,
   setFontSize,
-  
 } from "../../store/reducers/settingSlice";
+import styles from "./laddernamesettings.module.css"
 
 function EntaranceInput() {
   const dispatch = useDispatch();
@@ -31,15 +31,15 @@ function EntaranceInput() {
       if (parse.entrance[entranceCount[0]].long[0] === undefined) {
         delete parse.entrance[entranceCount[0]];
       }
-      dispatch(setBuildingNumber(parse.buildingNumber))
-      dispatch(setStreetType(parse.streetType.toLowerCase()))
-      dispatch(setStreetName(parse.streetName))
+      dispatch(setBuildingNumber(parse.buildingNumber));
+      dispatch(setStreetType(parse.streetType.toLowerCase()));
+      dispatch(setStreetName(parse.streetName));
       dispatch(setAdress(parse.adress));
       dispatch(setEntarance(parse.entrance));
       dispatch(setAllEntarence(Object.keys(parse.entrance)));
       dispatch(setCurrentEntarance(Object.keys(parse.entrance)[0]));
-      dispatch(setFontSize(110));
-      setInputData("")
+      dispatch(setFontSize(150));
+      setInputData("");
     } catch (error) {
       console.log(error);
     }
@@ -48,11 +48,16 @@ function EntaranceInput() {
   return (
     <div>
       Введи данные из экселя:
-      <form onSubmit={changeInput}>
-        <input placeholder="данные из exel" type="text" value={inputData} onChange={inputDataHandler} />
+      <form
+      className={styles.form} onSubmit={changeInput}>
+        <input
+          placeholder="данные из exel"
+          type="text"
+          value={inputData}
+          onChange={inputDataHandler}
+        />
         <button type="submit">ввести</button>
       </form>
-      
     </div>
   );
 }

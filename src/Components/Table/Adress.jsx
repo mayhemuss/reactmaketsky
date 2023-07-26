@@ -11,7 +11,7 @@ function Adress({ type, haveAdress }) {
     <>
       {haveAdress && (
         <div
-          style={{ fontSize: adressSize }}
+          style={{ fontSize: adressSize , height: "60%"}}
           className={
             "base flex adress " +
             (type === "sticker" ? "base_white_black" : "base_blue_white")

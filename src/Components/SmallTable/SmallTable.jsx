@@ -1,52 +1,36 @@
-import React  from "react";
-import AddLogo from "../Table/AddLogo";
+import React from "react";
 import Adress from "../Table/Adress";
 import LadderNum from "../Table/LadderNum";
 import ShortEnterance from "./ShortEnterance";
+import style from "./smalltable.module.css";
+import logo_img from "../../images/logo_img.svg";
+import logo_text from "../../images/logo_text.svg";
 
 function SmallTable() {
   return (
-    <div
-      className="small_tab flex collumn standart_border"
-      style={{
-        width: "210mm",
-        height: "148mm",
-      }}
-    >
-      <div
-        className="flex collumn h100 space_between"
-        style={{
-          marginRight: "8mm",
-          marginLeft: "8mm",
-          marginTop: "8mm",
-        }}
-      >
-        <div className="flex collumn h100">
-          <div
-            className="base_blue_white flex w100 flex_centr align_center"
-            style={{
-              height: "40mm",
-              fontSize: "40pt",
-              marginBottom: "3mm",
-            }}
-          >
+    <div className={style.full_table}>
+      <div className={style.container}>
+        <div className={style.content_container}>
+          <div className={style.adress}>
             <Adress haveAdress={true} />
           </div>
-          <div className="flex collumn base_blue_white h100 w100 space_between align_center">
-            <div className="numb flex collumn h100 flex_centr">
-              <LadderNum haveLadderNum={true} width={189} />
+          <div className={style.bottom_container}>
+            <div className={style.ladder_number}>
+              <LadderNum haveLadderNum={true} width={210} />
             </div>
-            <div
-              className="room flex collumn h100 flex_start"
-              style={{
-                fontSize: "80pt",
-              }}
-            >
+            <div className={style.rooms}>
               <ShortEnterance />
             </div>
           </div>
         </div>
-        <AddLogo width={210} />
+        <div className={style.logo_container}>
+          <img className={style.logo_img} alt="logo_img" src={logo_img}></img>
+          <img
+            className={style.logo_text}
+            alt="logo_text"
+            src={logo_text}
+          ></img>
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,14 @@ const settingSlice = createSlice({
     isReverseTable: false,
     currentEntarance: "1",
     headType: "Парадная №",
-    fontSize: 110,
+    headTypes: [
+      "Парадная №",
+      "Парадная ",
+      "Лестница №",
+      "Подъезд №",
+      "Секция ",
+    ],
+    fontSize: 150,
     streetNameSize: 220,
     streetTypeSize: 130,
     buildingNumberSize: 300,
@@ -67,6 +74,9 @@ const settingSlice = createSlice({
     changeFontSize(state, { payload }) {
       state.fontSize = state.fontSize + payload;
     },
+    addHeadTypes(state, { payload }) {
+      state.headTypes = [...state.headTypes, payload];
+    },
   },
 });
 
@@ -90,4 +100,5 @@ export const {
   setBuildingNumberSize,
   setBuildingNumberIndent,
   setStreetTypeGap,
+  addHeadTypes,
 } = settingSlice.actions;

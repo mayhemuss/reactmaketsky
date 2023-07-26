@@ -4,19 +4,21 @@ import LadderNameSettings from "../Components/Settings/LadderNameSettings";
 import ChoseEntarance from "../Components/Settings/ChoseEntarance";
 import Instruction from "../Components/Instruction/Instruction";
 import BigNumber from "../Components/SmallTable/BigNumber";
+import print from "./printhide.module.css";
+import styles from "./style.module.css"
 
 function BigNumberEnterancePage(props) {
   return (
-    <div className="flex row" style={{ gap: "10mm" }}>
+    <div className={styles.container_horizontal}>
       <BigNumber />
-      <div style={{ width: "50mm" }}>
+      <div className={(print.print_hide+" "+ styles.settings)}>
         <EntaranceInput />
         <div>...................</div>
         <LadderNameSettings />
         <div>...................</div>
         <ChoseEntarance />
       </div>
-      <Instruction width={210} height={297} />
+      <Instruction orientering="vertical" width={210} height={297} />
     </div>
   );
 }

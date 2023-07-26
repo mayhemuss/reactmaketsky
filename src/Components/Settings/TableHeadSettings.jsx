@@ -8,7 +8,6 @@ import {
   setFontSize,
 } from "../../store/reducers/settingSlice";
 import MyCheckBox from "../MyCheckBox";
-
 import { settingsSelector } from "../../store/selectors";
 
 function TableHeadSettings() {
@@ -16,35 +15,36 @@ function TableHeadSettings() {
   const { haveAdress, haveLadderNum, haveTableTop, isReverseTable } =
     useSelector(settingsSelector);
 
-  const haveAdressToggle = () => {
-    dispatch(setHaveAdress());
-    dispatch(setFontSize(110));
-  };
-  const setHaveLadderNumToggle = () => {
-    dispatch(setHaveLadderNum());
-    dispatch(setFontSize(110));
-  };
-  const setHaveTableTopToggle = () => {
-    dispatch(setHaveTableTop());
-    dispatch(setFontSize(110));
-  };
-  const setIsReverseTableToggle = () => {
-    dispatch(setIsReverseTable());
+  const onclickHandler = (func) => {
+    dispatch(func());
+    dispatch(setFontSize(150));
   };
 
   return (
     <div>
       Настройки:
-      <MyCheckBox value={haveAdress} callBack={haveAdressToggle}>
+      <MyCheckBox
+        value={haveAdress}
+        callBack={() => onclickHandler(setHaveAdress)}
+      >
         Нужен адресс?
       </MyCheckBox>
-      <MyCheckBox value={haveLadderNum} callBack={setHaveLadderNumToggle}>
+      <MyCheckBox
+        value={haveLadderNum}
+        callBack={() => onclickHandler(setHaveLadderNum)}
+      >
         Нужна парадная?
       </MyCheckBox>
-      <MyCheckBox value={haveTableTop} callBack={setHaveTableTopToggle}>
+      <MyCheckBox
+        value={haveTableTop}
+        callBack={() => onclickHandler(setHaveTableTop)}
+      >
         Нужен заголовок этаж квартира?
       </MyCheckBox>
-      <MyCheckBox value={isReverseTable} callBack={setIsReverseTableToggle}>
+      <MyCheckBox
+        value={isReverseTable}
+        callBack={() => onclickHandler(setIsReverseTable)}
+      >
         Перевернуть таблицу
       </MyCheckBox>
     </div>

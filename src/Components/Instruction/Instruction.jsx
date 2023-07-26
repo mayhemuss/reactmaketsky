@@ -1,30 +1,58 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import styles from "./instrutions.module.css";
+import file from "./1exel.xlsx";
 
-function Instruction({ height, width }) {
+function Instruction({ height, width, orientering }) {
   const navigate = useNavigate();
 
-  const listHeight = 841;
-  const listWidth = 594;
-  const leftIndent = 13;
-  const topIndent = 13;
+  const LISTHEIGHT = 841;
+  const LISTWIDTH = 594;
+  const LEFTINDENT = 13;
+  const TOPINDENT = 13;
 
-  const currentHeight = height + 200 > width ? listHeight : listWidth;
-  const currentWidth = height + 200 > width ? listWidth : listHeight;
+  const currentHeight = height + 200 > width ? LISTHEIGHT : LISTWIDTH;
+  const currentWidth = height + 200 > width ? LISTWIDTH : LISTHEIGHT;
 
   return (
-    <div
-      className="instruction flex collumn"
-      style={{ marginLeft: "20mm", width: "50mm" }}
-    >
-      <button onClick={() => navigate("/", { replace: false })}>назад</button>
-      <h1>
-        {width}*{height}
-      </h1>
-      <h2>сверху: {topIndent}</h2>
-      <h2>снизу: {currentHeight - topIndent - height + 1}</h2>
-      <h2>слева: {leftIndent}</h2>
-      <h2>справа: {currentWidth - leftIndent - width + 1} </h2>
+    <div className={styles.container}>
+      <button
+        className={styles.print_hide}
+        onClick={() => navigate("/", { replace: false })}
+      >
+        назад
+      </button>
+      <div className={styles.print_hide}>
+        <a
+         
+          download="1!форма экселя для табличек.xlsx"
+          href={file}
+        >
+          скачать форму экселя
+        </a>
+      </div>
+      <div>
+        размер таблички: {width}*{height}
+      </div>
+      <div className={styles.print_hide}>печать с размером листа А1</div>
+      <div className={styles.print_hide}>
+        в{" "}
+        <b>
+          {" "}
+          {orientering === "horizontal"
+            ? "Альбомном формате"
+            : "Портретном формате"}
+        </b>
+      </div>
+      <div className={styles.print_hide}>c полями по умолчанию</div>
+      <div className={styles.print_hide}>с маштабом по умолчанию</div>
+      <div className={styles.print_hide}>с отлюченными колонтикулами</div>
+      <div className={styles.print_hide}>с включеным фоном</div>
+      <div>отступы для Adobe Acrobat:</div>
+      <div>сверху: {TOPINDENT}</div>
+      <div>снизу: {currentHeight - TOPINDENT - height + 1}</div>
+      <div>слева: {LEFTINDENT}</div>
+      <div>справа: {currentWidth - LEFTINDENT - width + 1} </div>
     </div>
   );
 }

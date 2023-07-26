@@ -1,0 +1,12 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+form > input {
+  width: 70%;
+}
+form > button {
+  width: 30%;
+}

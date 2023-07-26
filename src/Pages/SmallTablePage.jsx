@@ -9,6 +9,8 @@ import ChoseEntarance from "../Components/Settings/ChoseEntarance";
 import LadderNameSettings from "../Components/Settings/LadderNameSettings";
 import { useSelector } from "react-redux";
 import { entrancesSelector, settingsSelector } from "../store/selectors";
+import print from "./printhide.module.css";
+import styles from "./style.module.css"
 
 function SmallTablePage() {
   const { adress } = useSelector(entrancesSelector);
@@ -21,7 +23,7 @@ function SmallTablePage() {
   return (
     <div className="flex row" style={{ gap: "10mm" }}>
       <SmallTable />
-      <div style={{ width: "50mm" }}>
+      <div className={(print.print_hide+" "+ styles.settings)}>
         <EntaranceInput />
         <div>...................</div>
         <LadderNameSettings />
@@ -30,7 +32,8 @@ function SmallTablePage() {
         <div>...................</div>
         <ChoseEntarance />
       </div>
-      <Instruction width={210} height={148} />
+      
+      <Instruction orientering="vertical" width={210} height={148} />
     </div>
   );
 }

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 3mm;
+  max-width: 500px;
+  font-size: xx-large;
+}
+.container > * {
+  font-size: xx-large;
+}
+.container b{
+  font-size: 30pt;
+}
+
+
+@media print {
+  .print_hide {
+    display: none;
+  }
+  .print_hide * {
+    display: none;
+  }
+}
