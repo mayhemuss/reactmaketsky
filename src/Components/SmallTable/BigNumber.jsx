@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AddLogo from "../Table/AddLogo";
 import ShortEnterance from "./ShortEnterance";
-import { settingsSelector } from "../../store/selectors";
+import { entrancesSelector, settingsSelector } from "../../store/selectors";
 import { useSelector } from "react-redux";
 import style from "./bignumber.module.css";
 
 function BigNumber() {
   const { currentEntarance, headType } = useSelector(settingsSelector);
+  const { adress } = useSelector(entrancesSelector);
+  useEffect(() => {
+    document.title = `${adress}_п№_${currentEntarance}_${210}_${297}`;
+  }, [currentEntarance, adress]);
+
   return (
     <div className={style.full_table}>
       <div className={style.table_container}>
