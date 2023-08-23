@@ -17,6 +17,7 @@
     "redux": "^4.2.1",
     "redux-devtools-extension": "^2.13.9",
     "sass": "^1.64.1",
+    "serve": "^14.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -24,7 +25,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "prod": "serve -s build"
   },
   "eslintConfig": {
     "extends": [
