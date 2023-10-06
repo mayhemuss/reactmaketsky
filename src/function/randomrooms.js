@@ -12,7 +12,7 @@ export const randomcounter = (count, parts) => {
     return alert("количество частей не целое число");
   const result = [];
 
-
+const part = []
   for (let i = 1; i <= parts; i++) {
     part.push(i);
   }
