@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import style from "./landing.module.css";
 
-function LandingPage(props) {
+function LandingPage() {
   const navigate = useNavigate();
   return (
     <div className={style.container}>
@@ -20,6 +20,9 @@ function LandingPage(props) {
       </button>
       <button onClick={() => navigate("/adressTable", { replace: false })}>
         Адресный указатель
+      </button>
+      <button onClick={() => navigate("/rooms_counter", { replace: false })}>
+        Вывод квартир в рандоме
       </button>
     </div>
   );

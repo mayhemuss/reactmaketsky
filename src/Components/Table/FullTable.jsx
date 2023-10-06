@@ -52,6 +52,7 @@ function FullTable() {
 
   return (
     <div
+    id="page"
       className="flex"
       style={{
         width: width + "mm",
