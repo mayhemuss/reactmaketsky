@@ -71,7 +71,7 @@ const settingSlice = createSlice({
     setFontSize(state, { payload }) {
       state.fontSize = payload;
     },
-    changeFontSize(state, { payload }) {
+      changeFontSize(state , { payload }) {
       state.fontSize = state.fontSize + payload;
     },
     addHeadTypes(state, { payload }) {

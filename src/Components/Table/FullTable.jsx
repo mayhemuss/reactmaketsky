@@ -1,17 +1,17 @@
-import React, { createRef, useEffect } from "react";
+import React, {createRef, useEffect} from "react";
 import Adress from "./Adress";
 import LadderNum from "./LadderNum";
 import Table from "./Table";
 import AddLogo from "./AddLogo";
-import { useDispatch, useSelector } from "react-redux";
-import { changeFontSize } from "../../store/reducers/settingSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {changeFontSize} from "../../store/reducers/settingSlice";
 import {
   settingsSelector,
   entrancesSelector,
   tableSelector,
 } from "../../store/selectors";
-import { tableSizeCorrector } from "../../function/tableSizeCorrector";
-import { paddingCorrector } from "../../function/paddingCorrector";
+import {tableSizeCorrector} from "../../function/tableSizeCorrector";
+import {paddingCorrector} from "../../function/paddingCorrector";
 import ColorBackGround from "./ColorBackGround";
 import TopLine from "./TopLine";
 
@@ -26,8 +26,8 @@ function FullTable() {
     adressSize,
     fontSize,
   } = useSelector(settingsSelector);
-  const { adress, entrance } = useSelector(entrancesSelector);
-  const { allTableSize, currentTableSize } = useSelector(tableSelector);
+  const {adress, entrance} = useSelector(entrancesSelector);
+  const {allTableSize, currentTableSize} = useSelector(tableSelector);
 
   const logoRef = createRef();
   const allTableRef = createRef();
@@ -52,21 +52,21 @@ function FullTable() {
 
   return (
     <div
-    id="page"
+      id="page"
       className="flex"
       style={{
         width: width + "mm",
         height: height + "mm",
       }}
     >
-      <ColorBackGround />
+      <ColorBackGround/>
       <div
         ref={allTableRef}
         className={
           "full__table flex collumn w100 z5 " + paddingCorrector(width)
         }
       >
-        <Adress type={type} adress={adress} haveAdress={haveAdress} />
+        <Adress type={type} adress={adress} haveAdress={haveAdress}/>
 
         <LadderNum
           width={width}
@@ -75,11 +75,12 @@ function FullTable() {
           type={type}
           haveLadderNum={haveLadderNum}
         />
-        <TopLine type={type} haveTableHead={haveTableTop} />
-        <Table type={type} />
-        <AddLogo width={width} logoRef={logoRef} />
+        <TopLine type={type} haveTableHead={haveTableTop}/>
+        <Table type={type}/>
+        <AddLogo width={width} logoRef={logoRef}/>
       </div>
     </div>
   );
 }
+
 export default FullTable;
