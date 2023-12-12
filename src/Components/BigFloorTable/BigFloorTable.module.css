@@ -1,0 +1,8 @@
+.full_table {
+    display: flex;
+    flex-direction: column;
+    border: 1px black solid;
+    width: 400mm;
+    height: 500mm;
+}
+

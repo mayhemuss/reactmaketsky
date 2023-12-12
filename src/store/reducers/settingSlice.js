@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 const settingSlice = createSlice({
   name: "settingSlice",
@@ -9,6 +9,7 @@ const settingSlice = createSlice({
     haveTableTop: true,
     isReverseTable: false,
     currentEntarance: "1",
+    currentFloor: 0,
     headType: "Парадная №",
     headTypes: [
       "Парадная №",
@@ -25,23 +26,23 @@ const settingSlice = createSlice({
     streetTypeGap: 10,
   },
   reducers: {
-    setStreetNameSize(state, { payload }) {
+    setStreetNameSize(state, {payload}) {
       state.streetNameSize = payload;
     },
-    setStreetTypeSize(state, { payload }) {
+    setStreetTypeSize(state, {payload}) {
       state.streetTypeSize = payload;
     },
-    setBuildingNumberSize(state, { payload }) {
+    setBuildingNumberSize(state, {payload}) {
       state.buildingNumberSize = payload;
     },
-    setBuildingNumberIndent(state, { payload }) {
+    setBuildingNumberIndent(state, {payload}) {
       state.buildingNumberIndent = payload;
     },
-    setStreetTypeGap(state, { payload }) {
+    setStreetTypeGap(state, {payload}) {
       state.streetTypeGap = payload;
     },
 
-    setAdressSize(state, { payload }) {
+    setAdressSize(state, {payload}) {
       state.adressSize = payload;
     },
     AdressSizeDecriment(state) {
@@ -64,17 +65,19 @@ const settingSlice = createSlice({
     },
     setCurrentEntarance(state, action) {
       state.currentEntarance = action.payload;
+    },setCurrentFloor(state, action) {
+      state.currentFloor = action.payload;
     },
-    setHeadType(state, { payload }) {
+    setHeadType(state, {payload}) {
       state.headType = payload;
     },
-    setFontSize(state, { payload }) {
+    setFontSize(state, {payload}) {
       state.fontSize = payload;
     },
-      changeFontSize(state , { payload }) {
+    changeFontSize(state, {payload}) {
       state.fontSize = state.fontSize + payload;
     },
-    addHeadTypes(state, { payload }) {
+    addHeadTypes(state, {payload}) {
       state.headTypes = [...state.headTypes, payload];
     },
   },
@@ -101,4 +104,5 @@ export const {
   setBuildingNumberIndent,
   setStreetTypeGap,
   addHeadTypes,
+  setCurrentFloor
 } = settingSlice.actions;

@@ -11,6 +11,17 @@
     url('/fonts/heliosRegular1.woff') format('woff'),
     url('fonts/heliosRegular2.woff2') format('woff2');
 }
+@font-face {
+  font-family: 'SFProDisplayBold';
+  src: url('./fonts/SFPRODISPLAY-BOLD.TTF')  format('truetype');
+}
+@font-face {
+  font-family: 'SFProDisplayLight';
+  src: url('./fonts/SFPRODISPLAY-LIGHT.TTF')  format('truetype');
+}
+
+
+
 @media print {
   .settings {
     /* display: none; */

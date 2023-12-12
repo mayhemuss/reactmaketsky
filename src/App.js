@@ -6,6 +6,7 @@ import SmallTablePage from "./Pages/SmallTablePage";
 import AdressTablePage from "./Pages/AdressTablePage";
 import BigNumberEnterancePage from "./Pages/BigNumberEnterancePage";
 import RoomsCounterRandom from "./Pages/RoomsCounterRandom";
+import BigFloorPage from "./Pages/BigFloorPage";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="small_table" element={<SmallTablePage />} />
           <Route path="big_number" element={<BigNumberEnterancePage />} />
           <Route path="rooms_counter" element={<RoomsCounterRandom />} />
+          <Route path="BigFloorPage" element={<BigFloorPage />} />
         </Routes>
       </BrowserRouter>
     </div>

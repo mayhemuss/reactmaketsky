@@ -24,6 +24,9 @@ function LandingPage() {
       <button onClick={() => navigate("/rooms_counter", { replace: false })}>
         Вывод квартир в рандоме
       </button>
+      <button onClick={() => navigate("/BigFloorPage", { replace: false })}>
+        этажные таблички 400*500
+      </button>
     </div>
   );
 }

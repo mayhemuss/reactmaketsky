@@ -8,30 +8,28 @@ import {
 
 import { entrancesSelector, settingsSelector } from "../../store/selectors";
 
-function ChoseEntarance() {
+function ChoseFloor(props) {
   const { currentEntarance, currentFloor } = useSelector(settingsSelector);
   const { allEntrances , entrance} = useSelector(entrancesSelector);
   const dispatch = useDispatch();
-  const currentEntaranceHandler = (e) => {
-    dispatch(setCurrentEntarance(e.target.value));
-    dispatch(setFontSize(150));
-    dispatch(setCurrentFloor(0))
-
+  const currentFloorHandler = (e) => {
+        dispatch(setCurrentFloor(+e.target.value))
   };
 
 
   return (
     <div>
       Выбор парадной:
-      {allEntrances.map((elem) => {
+      {entrance[currentEntarance].long.map((elem, index) => {
+        const floor = elem.floor
         return (
           <MyRadio
-            callBack={currentEntaranceHandler}
-            current={currentEntarance}
-            val={elem}
-            key={elem}
+            callBack={currentFloorHandler}
+            current={currentFloor}
+            val={index}
+            key={index}
           >
-            парадная № <strong>{elem}</strong>
+            этаж № <strong>{floor}</strong>
           </MyRadio>
         );
       })}
@@ -39,4 +37,4 @@ function ChoseEntarance() {
   );
 }
 
-export default ChoseEntarance;
+export default ChoseFloor;
