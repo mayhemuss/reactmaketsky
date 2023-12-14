@@ -1,19 +1,16 @@
 import React from "react";
 import MyRadio from "../Table/MyRadio";
-import { useDispatch, useSelector } from "react-redux";
-import {
-  setCurrentEntarance, setCurrentFloor,
-  setFontSize,
-} from "../../store/reducers/settingSlice";
+import {useDispatch, useSelector} from "react-redux";
+import {setCurrentFloor} from "../../store/reducers/settingSlice";
 
-import { entrancesSelector, settingsSelector } from "../../store/selectors";
+import {entrancesSelector, settingsSelector} from "../../store/selectors";
 
-function ChoseFloor(props) {
-  const { currentEntarance, currentFloor } = useSelector(settingsSelector);
-  const { allEntrances , entrance} = useSelector(entrancesSelector);
+function ChoseFloor() {
+  const {currentEntarance, currentFloor} = useSelector(settingsSelector);
+  const {entrance} = useSelector(entrancesSelector);
   const dispatch = useDispatch();
   const currentFloorHandler = (e) => {
-        dispatch(setCurrentFloor(+e.target.value))
+    dispatch(setCurrentFloor(+e.target.value))
   };
 
 

@@ -9,8 +9,8 @@ import {
 import { entrancesSelector, settingsSelector } from "../../store/selectors";
 
 function ChoseEntarance() {
-  const { currentEntarance, currentFloor } = useSelector(settingsSelector);
-  const { allEntrances , entrance} = useSelector(entrancesSelector);
+  const { currentEntarance,  } = useSelector(settingsSelector);
+  const { allEntrances , } = useSelector(entrancesSelector);
   const dispatch = useDispatch();
   const currentEntaranceHandler = (e) => {
     dispatch(setCurrentEntarance(e.target.value));

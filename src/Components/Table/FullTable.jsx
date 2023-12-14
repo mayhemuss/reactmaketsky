@@ -67,7 +67,6 @@ function FullTable() {
         }
       >
         <Adress type={type} adress={adress} haveAdress={haveAdress}/>
-
         <LadderNum
           width={width}
           ladderN={currentEntarance}
