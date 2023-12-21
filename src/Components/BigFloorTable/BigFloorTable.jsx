@@ -30,7 +30,9 @@ function BigFloorTable() {
           fontSize: "237mm",
           lineHeight: "0.9",
           fontFamily: "SFProDisplayBold",
-          marginTop:"37mm"
+          marginTop:"37mm",
+          letterSpacing:"-20px",
+          marginRight:"10px"
         }}>
           {floor}
         </div>
@@ -49,13 +51,13 @@ function BigFloorTable() {
           квартиры
         </div>
         <div style={{
-          letterSpacing: "25px",
+          letterSpacing: "18px",
           fontSize: "37mm",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
           fontFamily: "SFProDisplayBold",
-          paddingLeft:"12.5px",
+          paddingLeft:"9px",
           width:"100%",
           textAlign: "center",
           marginTop:"4mm"
