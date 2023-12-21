@@ -20,6 +20,11 @@
   src: url('./fonts/SFPRODISPLAY-LIGHT.TTF')  format('truetype');
 }
 
+@font-face {
+  font-family: 'SFProDisplayRegular';
+  src: url('./fonts/SFPRODISPLAY-REGULAR.TTF')  format('truetype');
+}
+
 
 
 @media print {

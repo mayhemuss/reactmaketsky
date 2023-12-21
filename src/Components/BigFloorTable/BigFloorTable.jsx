@@ -18,39 +18,39 @@ function BigFloorTable() {
 
 
   useEffect(() => {
-    document.title = `${adress}_п№${currentEntarance}_эт№_${floor}_${400}_${500}`;
+    document.title = `${adress}_п№${currentEntarance}_эт№_${floor}_${300}_${400}`;
   }, [currentEntarance, adress, currentFloor]);
 
   return (
     <div className={styles.full_table}>
-      <div style={{width: "100%", height: "425mm", backgroundColor: "#323337", color: "white"}}>
+      <div style={{width: "100%", height: "345mm", backgroundColor: "#323337", color: "white"}}>
         <div style={{
           display: "flex",
           justifyContent: "center",
-          fontSize: "317mm",
+          fontSize: "237mm",
           lineHeight: "0.9",
           fontFamily: "SFProDisplayBold",
-          marginTop:"20mm"
+          marginTop:"37mm"
         }}>
           {floor}
         </div>
         <div style={{
-          fontSize: "35mm",
+          fontSize: "31mm",
           display: "flex",
           textAlign: "center",
-          fontFamily: "SFProDisplayLight",
+          fontFamily: "SFProDisplayRegular",
           letterSpacing: "35px",
           marginBottom: "-10mm",
           width:"100%",
           paddingLeft:"17.5px",
           justifyContent:"center",
-          marginTop: "-4mm"
+          marginTop: "-3mm"
         }}>
           квартиры
         </div>
         <div style={{
           letterSpacing: "25px",
-          fontSize: "57mm",
+          fontSize: "37mm",
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
@@ -58,6 +58,7 @@ function BigFloorTable() {
           paddingLeft:"12.5px",
           width:"100%",
           textAlign: "center",
+          marginTop:"4mm"
         }}>
           {start}{" — "}{end}
 
@@ -68,15 +69,15 @@ function BigFloorTable() {
       </div>
 
       <div style={{
-        height: "75mm",
+        height: "55mm",
         display: "flex",
         flexDirection: "row",
         width: "100%",
         justifyContent: "space-between",
         alignItems: "flex-end"
       }}>
-        <img style={{height: "45mm", margin: "14mm"}} className="logo_img" alt="logo_img" src={logo_img}></img>
-        <img style={{height: "39mm", margin: "14mm"}} className="logo_text" alt="logo_text" src={logo_text}></img>
+        <img style={{height: "33mm", margin: "10mm"}} className="logo_img" alt="logo_img" src={logo_img}></img>
+        <img style={{height: "29mm", margin: "10mm"}} className="logo_text" alt="logo_text" src={logo_text}></img>
       </div>
     </div>
   );
