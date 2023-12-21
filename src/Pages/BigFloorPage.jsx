@@ -21,7 +21,7 @@ function BigFloorPage(props) {
         <div>...................</div>
         <ChoseFloor/>
       </div>
-      <Instruction orientering="vertical" width={400} height={500}/>
+      <Instruction orientering="vertical" width={300} height={400}/>
     </div>
   );
 }
