@@ -2,7 +2,7 @@ export function tableSizeCorrector(tableHeight, correctHeight, fontSize) {
   if (tableHeight - correctHeight > 200) {
     return 5;
   } else if (tableHeight - correctHeight > 120 && fontSize < 120) {
-    return 3;
+    return 2;
   } else if (tableHeight - correctHeight > 15 && fontSize < 120) {
     return 1;
   } else if (tableHeight - correctHeight < -70) {

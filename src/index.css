@@ -112,7 +112,7 @@ body {
   text-align: center;
 }
 .base_blue_white {
-  background-color: rgb(49, 39, 131);
+  background-color: #312783;  /*#62b22f - зеленый;  #312783 - синий*/
   color: rgb(255, 255, 255);
 }
 .base_white_black {
