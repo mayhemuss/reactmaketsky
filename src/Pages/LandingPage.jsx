@@ -29,7 +29,7 @@ function LandingPage() {
       {/*  Вывод квартир в рандоме*/}
       {/*</button>*/}
       <button onClick={() => navigate("/BigFloorPage", { replace: false })}>
-        этажные таблички 400*500
+        этажные таблички с квартирной раскладкой
       </button>
     </div>
   );
