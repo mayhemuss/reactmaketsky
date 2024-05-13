@@ -1,28 +1,28 @@
 @font-face {
   font-family: "HeliosBold";
-  src: url("./fonts/heliosBold.eot") format("embedded-opentype"),
-    url("./fonts/heliosBold1.woff") format("woff"),
-    url("./fonts/heliosBold2.woff2") format("woff2");
+  src: url("../fonts/heliosBold.eot") format("embedded-opentype"),
+    url("../fonts/heliosBold1.woff") format("woff"),
+    url("../fonts/heliosBold2.woff2") format("woff2");
 }
 
 @font-face {
   font-family: 'HeliosRegular';
-  src: url('/fonts/heliosRegular.eot') format('embedded-opentype'),
-    url('/fonts/heliosRegular1.woff') format('woff'),
-    url('fonts/heliosRegular2.woff2') format('woff2');
+  src: url('/src/fonts/heliosRegular.eot') format('embedded-opentype'),
+    url('/src/fonts/heliosRegular1.woff') format('woff'),
+    url('../fonts/heliosRegular2.woff2') format('woff2');
 }
 @font-face {
   font-family: 'SFProDisplayBold';
-  src: url('./fonts/SFPRODISPLAY-BOLD.TTF')  format('truetype');
+  src: url('../fonts/SFPRODISPLAY-BOLD.TTF')  format('truetype');
 }
 @font-face {
   font-family: 'SFProDisplayLight';
-  src: url('./fonts/SFPRODISPLAY-LIGHT.TTF')  format('truetype');
+  src: url('../fonts/SFPRODISPLAY-LIGHT.TTF')  format('truetype');
 }
 
 @font-face {
   font-family: 'SFProDisplayRegular';
-  src: url('./fonts/SFPRODISPLAY-REGULAR.TTF')  format('truetype');
+  src: url('../fonts/SFPRODISPLAY-REGULAR.TTF')  format('truetype');
 }
 
 
