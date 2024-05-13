@@ -1,11 +1,12 @@
 import React from "react";
-import EnteranceTablePage from "@src/Pages/EnteranceTablePage";
+// import EnteranceTablePage from "@src/Pages/EnteranceTablePage";
 import LandingPage from "@src/Pages/LandingPage";
 import SmallTablePage from "@src/Pages/SmallTablePage";
 import AdressTablePage from "@src/Pages/AdressTablePage";
 import BigNumberEnterancePage from "@src/Pages/BigNumberEnterancePage";
 import RoomsCounterRandom from "@src/Pages/RoomsCounterRandom";
 import BigFloorPage from "@src/Pages/BigFloorPage";
+import EnteranceTablePage from "../Pages/EnteranceTablePage";
 
  const routes = [
   { path: "/", element: <LandingPage /> },

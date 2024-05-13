@@ -18,12 +18,13 @@ const settingSlice = createSlice({
       "Подъезд №",
       "Секция ",
     ],
-    fontSize: 150,
+    fontSize: 110,
     streetNameSize: 220,
     streetTypeSize: 130,
     buildingNumberSize: 300,
     buildingNumberIndent: -2,
     streetTypeGap: 10,
+    maxSize: 150,
   },
   reducers: {
     setStreetNameSize(state, {payload}) {
@@ -80,6 +81,9 @@ const settingSlice = createSlice({
     addHeadTypes(state, {payload}) {
       state.headTypes = [...state.headTypes, payload];
     },
+    setMaxSize(state, { payload }) {
+      state.maxSize = payload;
+    },
   },
 });
 
@@ -104,5 +108,6 @@ export const {
   setBuildingNumberIndent,
   setStreetTypeGap,
   addHeadTypes,
-  setCurrentFloor
+  setCurrentFloor,
+  setMaxSize
 } = settingSlice.actions;

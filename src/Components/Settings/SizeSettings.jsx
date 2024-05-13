@@ -6,6 +6,7 @@ import {
   setAdressSize,
 } from "../../store/reducers/settingSlice";
 import styles from  "./sizesettings.module.css"
+import style from "./style.module.css"
 import { settingsSelector } from "../../store/selectors";
 
 function SizeSettings() {
@@ -23,7 +24,7 @@ function SizeSettings() {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container +" "+ style.container_vertical}>
       размер адреса:
       <form onSubmit={submitInput}>
         <input

@@ -1,6 +1,9 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import routes from "@src/routes";
+// import routes from "@src/App/routes";
+import "./fonts.css";
+import "./print_hide.css"
+import routes from "./routes";
 
 function App() {
   return (

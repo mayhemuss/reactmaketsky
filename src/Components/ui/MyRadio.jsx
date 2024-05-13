@@ -1,9 +1,11 @@
 import React from "react";
 
-function MyRadio({ val, callBack, children, current }) {
+function MyRadio({ val, callBack, children, current, name }) {
   return (
-    <div>
+    <div style={{display: "flex", flexDirection:"row", gap:"7mm"}}>
       <input
+      style={{width:"8mm"}}
+        name={name}
         type="radio"
         value={val}
         onChange={callBack}

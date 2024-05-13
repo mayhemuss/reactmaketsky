@@ -1,0 +1,16 @@
+@media print {
+    .settings {
+
+        width: 1mm;
+        visibility: hidden;
+    }
+
+    .instruction > button {
+        display: none;
+    }
+
+
+    .full_sticker {
+        visibility: visible;
+    }
+}

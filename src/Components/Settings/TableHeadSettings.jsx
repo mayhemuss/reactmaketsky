@@ -7,17 +7,17 @@ import {
   setIsReverseTable,
   setFontSize,
 } from "../../store/reducers/settingSlice";
-import MyCheckBox from "../MyCheckBox";
+import MyCheckBox from "../ui/MyCheckBox";
 import { settingsSelector } from "../../store/selectors";
 
 function TableHeadSettings() {
   const dispatch = useDispatch();
-  const { haveAdress, haveLadderNum, haveTableTop, isReverseTable } =
+  const { haveAdress, haveLadderNum, haveTableTop, isReverseTable, maxSize } =
     useSelector(settingsSelector);
 
   const onclickHandler = (func) => {
     dispatch(func());
-    dispatch(setFontSize(150));
+    dispatch(setFontSize(maxSize));
   };
 
   return (

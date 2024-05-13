@@ -6,7 +6,7 @@
 .container_vertical {
   display: flex;
   flex-direction: column;
-  gap: 3mm;
+  /* gap: 10mm; */
 }
 
 .settings {

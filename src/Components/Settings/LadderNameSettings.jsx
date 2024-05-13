@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import MyRadio from "../Table/MyRadio";
+import MyRadio from "../ui/MyRadio";
 import { addHeadTypes, setHeadType } from "../../store/reducers/settingSlice";
 import { settingsSelector } from "../../store/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./laddernamesettings.module.css";
+import style from "./style.module.css"
 
 function LadderNameSettings(props) {
   const dispatch = useDispatch();
@@ -21,7 +22,7 @@ function LadderNameSettings(props) {
   };
 
   return (
-    <div>
+    <div className={style.container_vertical}>
       Выбери тип названия парадной:
       {headTypes.map((elem) => {
         return (

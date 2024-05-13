@@ -1,5 +1,5 @@
 import React from "react";
-import MyRadio from "../Table/MyRadio";
+import MyRadio from "../ui/MyRadio";
 import {useDispatch, useSelector} from "react-redux";
 import {setCurrentFloor} from "../../store/reducers/settingSlice";
 

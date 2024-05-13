@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { tableSelector } from "../../store/selectors";
-import MyRadio from "../Table/MyRadio";
+import MyRadio from "../ui/MyRadio";
 import { setCurrentBigNumberTableSize } from "../../store/reducers/tableSettingsSlice";
 
 function ChoseDesign() {

@@ -1,12 +1,13 @@
-import React, { useState } from "react";
-import MyRadio from "../Table/MyRadio";
-import { useDispatch, useSelector } from "react-redux";
+import React, {useState} from "react";
+import MyRadio from "../ui/MyRadio";
+import {useDispatch, useSelector} from "react-redux";
 import {
   addTableSize,
   setCurrentTableSize,
 } from "../../store/reducers/tableSettingsSlice";
-import { setFontSize } from "../../store/reducers/settingSlice";
-import { tableSelector } from "../../store/selectors";
+import {setFontSize} from "../../store/reducers/settingSlice";
+import {settingsSelector, tableSelector} from "../../store/selectors";
+import style from "./style.module.css"
 
 function TableSettings() {
   const dispatch = useDispatch();
@@ -14,11 +15,12 @@ function TableSettings() {
   const [addButton, setAddButton] = useState(true);
   const [tableType, setTableType] = useState("pvc");
 
-  const { currentTableSize, allTableSize } = useSelector(tableSelector);
+  const {currentTableSize, allTableSize} = useSelector(tableSelector);
+  const {maxSize} = useSelector(settingsSelector)
 
   function setTablewidthHandler(e) {
     dispatch(setCurrentTableSize(+e.target.value));
-    dispatch(setFontSize(110));
+    dispatch(setFontSize(maxSize));
   }
 
   function addTogle() {
@@ -31,7 +33,7 @@ function TableSettings() {
     const width = target.width.value;
     const height = target.height.value;
     const type = target.type.value;
-    dispatch(addTableSize({ width: width, height: height, type: type }));
+    dispatch(addTableSize({width: width, height: height, type: type}));
     addTogle();
   }
 
@@ -41,53 +43,36 @@ function TableSettings() {
   }
 
   return (
-    <div>
+    <div className={style.container_vertical}>
       <div>выбор таблички</div>
       {allTableSize.map((elem, index) => {
+        const {type, width, height} = elem
         return (
           <MyRadio
-            key={elem.width + "" + elem.height + index}
+            key={width  + height + index}
             val={index}
             callBack={setTablewidthHandler}
             current={currentTableSize}
           >
-            шир: {elem.width} выс: {elem.height} тип:
-            {elem.type === "sticker" ? " наклейка" : " табличка"}
+            шир: {width} выс: {height} тип:
+            {type === "sticker" ? " наклейка" : " табличка"}
           </MyRadio>
         );
       })}
       <div>свой вариант:</div>
 
-      {addButton ? <button onClick={addTogle}>добавить</button> : <></>}
-      {addButton ? (
-        <></>
-      ) : (
+      {addButton ? <button onClick={addTogle}>создать</button> : (
         <form onSubmit={addHandler}>
           <input name="width" type="text" placeholder="ширина"></input>
           <input name="height" type="text" placeholder="высота"></input>
           <div>
-            <input
-              name="type"
-              type="radio"
-              onChange={inputHandler}
-              value="pvc"
-              checked={"pvc" === tableType ? true : false}
-            ></input>
-            пвх
-            <input
-              name="type"
-              type="radio"
-              onChange={inputHandler}
-              value="sticker"
-              checked={"sticker" === tableType ? true : false}
-            ></input>
-            наклейка
+            <MyRadio val={"pvc"} callBack={inputHandler} name={"type"} current={tableType}/>пвх
+            <MyRadio val={"sticker"} callBack={inputHandler} name={"type"} current={tableType}/>наклейка
           </div>
-
           <button>Добавить</button>
         </form>
       )}
-     
+
     </div>
   );
 }

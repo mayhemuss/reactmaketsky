@@ -13,6 +13,7 @@ import ChoseEntarance from "../Components/Settings/ChoseEntarance";
 import styles from "./style.module.css";
 
 import print from "./printhide.module.css";
+import MaxSizeSettings from "../Components/Settings/MaxSizeSettings";
 
 function EnteranceTablePage() {
     const {allTableSize, currentTableSize} = useSelector(tableSelector);
@@ -24,7 +25,7 @@ function EnteranceTablePage() {
     return (
         <div className={styles.container_horizontal}>
             <FullTable/>
-            <div className={print.print_hide + " " + styles.settings}>
+            <div className={print.print_hide + " " + styles.settings+ " " + styles.container_vertical}>
                 <TableSettings/>
                 <div>...................</div>
                 <EntaranceInput/>
@@ -34,6 +35,8 @@ function EnteranceTablePage() {
                 <LadderNameSettings/>
                 <div>...................</div>
                 <SizeSettings/>
+                <div>...................</div>
+                <MaxSizeSettings/>
                 <div>...................</div>
                 <ChoseEntarance/>
             </div>

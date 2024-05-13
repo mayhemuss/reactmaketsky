@@ -1,56 +1,10 @@
-@font-face {
-  font-family: "HeliosBold";
-  src: url("../fonts/heliosBold.eot") format("embedded-opentype"),
-    url("../fonts/heliosBold1.woff") format("woff"),
-    url("../fonts/heliosBold2.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: 'HeliosRegular';
-  src: url('/src/fonts/heliosRegular.eot') format('embedded-opentype'),
-    url('/src/fonts/heliosRegular1.woff') format('woff'),
-    url('../fonts/heliosRegular2.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'SFProDisplayBold';
-  src: url('../fonts/SFPRODISPLAY-BOLD.TTF')  format('truetype');
-}
-@font-face {
-  font-family: 'SFProDisplayLight';
-  src: url('../fonts/SFPRODISPLAY-LIGHT.TTF')  format('truetype');
-}
-
-@font-face {
-  font-family: 'SFProDisplayRegular';
-  src: url('../fonts/SFPRODISPLAY-REGULAR.TTF')  format('truetype');
-}
 
 
 
-@media print {
-  .settings {
-    /* display: none; */
-    width: 1mm;
-    visibility: hidden;
-  }
 
-  .instruction > button {
-    display: none;
-  }
-  /* display: none; */
 
-  /* body {
-    visibility: hidden;
-  } */
 
-  .full_sticker {
-    visibility: visible;
-  }
-}
 
-.App * {
-  font-family: "HeliosBold";
-}
 body {
   margin-left: 2.5mm;
   margin-top: 2mm;
@@ -61,25 +15,25 @@ body {
 .w100 {
   width: 100%;
 }
-.zeroSize {
-  height: 0;
-  width: 0;
-}
-.absolute {
-  position: absolute;
-}
-.black {
-  background-color: rgb(51, 51, 50);
-}
-.green {
-  background-color: rgb(94, 176, 50);
-}
-.z1 {
-  z-index: 1;
-}
-.z3 {
-  z-index: 3;
-}
+/*.zeroSize {*/
+/*  height: 0;*/
+/*  width: 0;*/
+/*}*/
+/*.absolute {*/
+/*  position: absolute;*/
+/*}*/
+/*.black {*/
+/*  background-color: rgb(51, 51, 50);*/
+/*}*/
+/*.green {*/
+/*  background-color: rgb(94, 176, 50);*/
+/*}*/
+/*.z1 {*/
+/*  z-index: 1;*/
+/*}*/
+/*.z3 {*/
+/*  z-index: 3;*/
+/*}*/
 .z5 {
   z-index: 5;
 }
@@ -152,9 +106,7 @@ body {
   width: 70%;
 }
 
-/* .collumn {
-  height: 100%;
-} */
+
 .full__table {
   gap: 2.8mm;
   flex-direction: column;
