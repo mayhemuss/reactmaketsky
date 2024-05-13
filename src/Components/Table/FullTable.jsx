@@ -25,7 +25,7 @@ function FullTable() {
     haveLadderNum,
     adressSize,
     fontSize,
-    maxSize,
+    
   } = useSelector(settingsSelector);
   const { adress, entrance } = useSelector(entrancesSelector);
   const { allTableSize, currentTableSize } = useSelector(tableSelector);
