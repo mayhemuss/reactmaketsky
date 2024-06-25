@@ -1,9 +1,10 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import styles from "./instrutions.module.css";
 import file from "./1exel.xlsx";
+import file2 from "./acrobat.zip";
 
-function Instruction({ height, width, orientering }) {
+function Instruction({height, width, orientering}) {
   const navigate = useNavigate();
 
   const LISTHEIGHT = 841;
@@ -18,17 +19,24 @@ function Instruction({ height, width, orientering }) {
     <div className={styles.container}>
       <button
         className={styles.print_hide}
-        onClick={() => navigate("/", { replace: false })}
+        onClick={() => navigate("/", {replace: false})}
       >
         назад
       </button>
       <div className={styles.print_hide}>
         <a
-         
           download="1!форма экселя для табличек.xlsx"
           href={file}
         >
           скачать форму экселя
+        </a>
+      </div>
+      <div className={styles.print_hide}>
+        <a
+          download="acrobat.zip"
+          href={file2}
+        >
+          скачать редактор pdf
         </a>
       </div>
       <div>
