@@ -36,7 +36,7 @@ function Instruction({height, width, orientering}) {
           download="acrobat.zip"
           href={file2}
         >
-          скачать редактор pdf
+          скачать Adobe Acrobat
         </a>
       </div>
       <div>
@@ -61,6 +61,9 @@ function Instruction({height, width, orientering}) {
       <div>снизу: {currentHeight - TOPINDENT - height + 1}</div>
       <div>слева: {LEFTINDENT}</div>
       <div>справа: {currentWidth - LEFTINDENT - width + 1} </div>
+      <div>необходимо добавить водяной знак с любым символом, после чего в просмотре обработки прозрачности необходимо
+        преобразовать весь текст в кривые
+      </div>
     </div>
   );
 }
